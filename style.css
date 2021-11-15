@@ -1,12 +1,12 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12pt;
-    padding: 10px 0;
+    padding: 10px 15px;
     margin: 0 auto;
     max-width: 1000px;
     display: grid;
-    grid-template-columns: 250px 2fr;
-    grid-template-rows: 40px 1fr;
+    grid-template-columns: min-content 2fr;
+    grid-template-rows: max-content 1fr;
 }
 
 header {
@@ -24,6 +24,7 @@ header > * {
 
 nav li {
     list-style: none;
+    margin: 4px 0;
 }
 
 nav ul {
@@ -38,6 +39,8 @@ nav {
     grid-column: 1;
     grid-row: 2;
     color: #676767;
+    width: max-content;
+    margin-right: 30px;
 }
 
 nav .parent {
@@ -58,4 +61,10 @@ nav a, header a {
 main {
     grid-column: 2;
     grid-row: 2;
+}
+
+@media (max-width: 900px) {
+    nav {
+        display: none;
+    }
 }
