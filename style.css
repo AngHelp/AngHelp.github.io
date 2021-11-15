@@ -1,0 +1,61 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    padding: 10px 0;
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 250px 2fr;
+    grid-template-rows: 40px 1fr;
+}
+
+header {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header > * {
+    font-size: 12pt;
+    margin-right: 15px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav ul {
+    padding-left: 30px;
+}
+
+nav > ul {
+    padding-left: 0;
+}
+
+nav {
+    grid-column: 1;
+    grid-row: 2;
+    color: #676767;
+}
+
+nav .parent {
+    color: black;
+    font-style: italic;
+}
+
+nav .current {
+    color: black;
+    font-weight: bold;
+}
+
+nav a, header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main {
+    grid-column: 2;
+    grid-row: 2;
+}
