@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 12pt;
-    padding: 10px 15px;
+    padding: 15px;
     margin: 0 auto;
     max-width: 1000px;
     display: grid;
-    grid-template-columns: min-content 2fr;
+    grid-template-columns: max-content 2fr;
     grid-template-rows: max-content 1fr;
+    gap: 15px;
 }
 
 header {
@@ -19,19 +22,42 @@ header {
 
 header > * {
     font-size: 12pt;
+    margin: 0;
     margin-right: 15px;
 }
 
 nav li {
     list-style: none;
-    margin: 4px 0;
+}
+
+nav a {
+    margin: 2px 0;
+    display: block;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: background-color 0.08s;
+}
+
+nav > ul > li:first-of-type a {
+    margin-top: 0;
+}
+
+nav a:hover {
+    color: #444;
+    background-color: #f0f2f4;
+}
+
+nav .parent a:hover {
+    color: black;
 }
 
 nav ul {
     padding-left: 30px;
+    margin: 0;
 }
 
 nav > ul {
+    margin: 0;
     padding-left: 0;
 }
 
@@ -40,16 +66,19 @@ nav {
     grid-row: 2;
     color: #676767;
     width: max-content;
-    margin-right: 30px;
+    max-width: 180px;
+    padding-right: 8px;
+    margin-right: 2px;
+    border-right: 1px solid #eeeff2;
 }
 
 nav .parent {
     color: black;
-    font-style: italic;
 }
 
-nav .current {
-    color: black;
+nav .current a {
+    background-color: #2188ff;
+    color: #f0f2f4;;
     font-weight: bold;
 }
 
@@ -63,8 +92,65 @@ main {
     grid-row: 2;
 }
 
+main :first-child {
+    margin-top: 0;
+}
+
+.hamburger {
+    display: none;
+    font-size: 0;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-color: white;
+    padding: 3px;
+}
+
+.hamburger:hover {
+    background-color: #f0f2f4;
+}
+
+.hamburger:focus {
+    background-color: #eeeff2;
+    border-color: #aaa;
+    outline: none;
+}
+
 @media (max-width: 900px) {
     nav {
         display: none;
+    }
+    body {
+        column-gap: 0;
+        padding-top: 0;
+    }
+    header {
+        position: sticky;
+        top: 0;
+        margin: 0 -15px;
+        padding: 5px 15px;
+        background-color: white;
+        border-bottom: 1px solid #d6d7db;
+    }
+    .hamburger {
+        display: unset;
+    }
+    .nav-open nav {
+        display: unset;
+        position: fixed;
+        background-color: white;
+        bottom: -2px;
+        left: 60px;
+        right: -1px;
+        top: 45px;
+        max-width: unset;
+        width: auto;
+        border: 1px solid #d6d7db;
+        border-radius: 10px 0 0 10px;
+        margin: 0;
+        padding: 30px;
+        overflow-y: auto;
+    }
+    .nav-open {
+        background-color: #565656;
     }
 }
