@@ -4,9 +4,33 @@
 		<title>AngHelp</title>
 		<link rel="stylesheet" href="style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script>
+			window.onload = () => {
+				const body = document.querySelector("body");
+				const hamburger = document.querySelector("button.hamburger");
+				const main = document.querySelector("main");
+
+				const isHamburgerOpen = () => {
+					return body.dataset.navopen !== "false";
+				}
+
+				hamburger.onclick = () => {
+					if (isHamburgerOpen()) {
+						body.dataset.navopen = "false";
+					} else {
+						body.dataset.navopen = "true";
+					}
+				}
+
+				main.onclick = () => {
+					if (isHamburgerOpen()) {
+						body.dataset.navopen = "false";
+					}
+				}
+			}
+		</script>
 	</head>
-	<body>
-		<!-- class="nav-open" -->
+	<body data-navopen="false">
 		<header>
 			<button class="hamburger">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M4 7a1 1 0 100-2 1 1 0 000 2zm4.75-1.5a.75.75 0 000 1.5h11.5a.75.75 0 000-1.5H8.75zm0 6a.75.75 0 000 1.5h11.5a.75.75 0 000-1.5H8.75zm0 6a.75.75 0 000 1.5h11.5a.75.75 0 000-1.5H8.75zM5 12a1 1 0 11-2 0 1 1 0 012 0zm-1 7a1 1 0 100-2 1 1 0 000 2z"></path></svg>
