@@ -26,6 +26,20 @@ header > * {
     margin-right: 15px;
 }
 
+header a {
+    /* margin: 2px 0;
+    display: block;
+    padding: 6px 8px; */
+    border-radius: 6px;
+    transition: color 0.08s;
+}
+
+header a:hover {
+    color: #676767;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 nav li {
     list-style: none;
 }
