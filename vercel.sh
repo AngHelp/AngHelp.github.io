@@ -5,7 +5,7 @@
 yum install wget -y &&
 
 # Instalowanie najnowszej wersji Go za pomocą https://github.com/canha/golang-tools-install-script
-{ wget -q -O - https://git.io/vQhTU | bash } &&
+wget -q -O - https://git.io/vQhTU | bash &&
 source /vercel/.bashrc &&
 
 # Uruchamianie generatora
