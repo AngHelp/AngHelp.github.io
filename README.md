@@ -22,8 +22,7 @@ Plik `format.html` jest używany przez generator stron jako schemat, który okre
 {title} -> tytuł strony
 {index} -> adres strony głównej
 {nav-class} -> klasa znacznika `<body>`, która zależy od obecności menu nawigacyjnego
-{vocabulary} -> adres stron głównej słownictwa
-{grammar} -> adres strony głównej gramatyki
+{nav-top} -> linki do poszczególnych sekcji strony
 {nav} -> menu nawigacyjne
 {main} -> zawartość strony
 ```
