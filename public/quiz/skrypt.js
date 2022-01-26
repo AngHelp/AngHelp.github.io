@@ -1,11 +1,12 @@
 let uzytkownikOpowiedzialPoprawnieNa = 0;
-
 let uzyteIndeksyPytan = [];
 let ObiektJSONzPytaniami;
 let iloscPytanwPlikuJSONDanejwKategorii;
 let numerWybranejKategorii;
-
 let POPRAWNAODPOWIEDZ;
+
+const MAXILOSCPYTAN = 5;
+let aktualnieOdpowiedzialNa = 0;
 
 
 function usunMenuGlowne()
@@ -49,7 +50,7 @@ function zaladujMenuQuizu(slowo)
 
 async function wczytajPytaniaDoQuizu( numerKategorii )
 {
-    let url = "./resources/BazaDanychPytan.json";
+    let url = "/resources/BazaDanychPytan.json";
     let response = await fetch(url);
     ObiektJSONzPytaniami = await response.json(); 
     iloscPytanwPlikuJSONDanejwKategorii = ObiektJSONzPytaniami.kategorie[numerKategorii].pytania.length;
@@ -78,37 +79,37 @@ function zaladujPytanie()
 {   
     document.getElementById("pkt").innerHTML = uzytkownikOpowiedzialPoprawnieNa;
 
-    if(ObiektJSONzPytaniami['kategorie'][numerWybranejKategorii]['typ'] == "zwykly")
+    if(aktualnieOdpowiedzialNa < MAXILOSCPYTAN)
     {
+        if(ObiektJSONzPytaniami['kategorie'][numerWybranejKategorii]['typ'] == "zwykly")
+        {
             // generuje pytanie, rozne od poprzednich
+            aktualnieOdpowiedzialNa++;
+            let indeksPytania;
+            do
+            {        
+
+                indeksPytania = Math.floor(Math.random() * (iloscPytanwPlikuJSONDanejwKategorii + 1));
+
+            }while(pomocLadowaniaPytan( indeksPytania ));
+            uzyteIndeksyPytan.push(indeksPytania);
 
 
-    let indeksPytania;
-        do
-        {        
+            let skrotJSON = ObiektJSONzPytaniami.kategorie[numerWybranejKategorii];
+            document.getElementById("pytanie").innerHTML = skrotJSON.pytania[indeksPytania].tresc;
 
-            indeksPytania = Math.floor(Math.random() * (iloscPytanwPlikuJSONDanejwKategorii + 1));
+            POPRAWNAODPOWIEDZ = skrotJSON.pytania[indeksPytania].odpowiedzi[4];
 
-        }while(pomocLadowaniaPytan( indeksPytania ));
-        uzyteIndeksyPytan.push(indeksPytania);
+            document.getElementById("odpA").innerHTML = skrotJSON.pytania[indeksPytania].odpowiedzi[0];
+            document.getElementById("odpB").innerHTML = skrotJSON.pytania[indeksPytania].odpowiedzi[1]; 
+            document.getElementById("odpC").innerHTML = skrotJSON.pytania[indeksPytania].odpowiedzi[2];
+            document.getElementById("odpD").innerHTML = skrotJSON.pytania[indeksPytania].odpowiedzi[3];
 
-
-        let skrotJSON = ObiektJSONzPytaniami.kategorie[numerWybranejKategorii];
-        document.getElementById("pytanie").innerHTML = skrotJSON.pytania[indeksPytania].tresc;
-
-        POPRAWNAODPOWIEDZ = skrotJSON.pytania[indeksPytania].odpowiedzi[4];
-
-        document.getElementById("odpA").innerHTML = skrotJSON.pytania[indeksPytania].odpowiedzi[0];
-        document.getElementById("odpB").innerHTML = skrotJSON.pytania[indeksPytania].odpowiedzi[1];
-        document.getElementById("odpC").innerHTML = skrotJSON.pytania[indeksPytania].odpowiedzi[2];
-        document.getElementById("odpD").innerHTML = skrotJSON.pytania[indeksPytania].odpowiedzi[3];
-
-
-            
-
-        // generowanie
+            // generowanie
+        }
     }
 }
+
 function pomocLadowaniaPytan( indekss )
 {
     for(let i = 0; i < uzyteIndeksyPytan.length; i++)
@@ -117,6 +118,28 @@ function pomocLadowaniaPytan( indekss )
             return true;
     }
     return false;
+}
+
+function zaladujEkranKoncowy()
+{
+    let napisKoncowyODP = document.getElementById("poprawneODP");
+    let napisyKoncowe = document.getElementById("napisyKoncowe");
+    let przyciskiKoncowe = document.getElementById("przyciskEkranuKoncowego");
+    var przycikiQuizuGorne = document.getElementById("przyciskQuizu1");
+    var przycikiQuizuDolne = document.getElementById("przyciskQuizu2");
+    var blockZPytaniem = document.getElementById("pytanie");
+    
+    
+    blockZPytaniem.style.display = "none";
+    przycikiQuizuGorne.style.display = "none";
+    przycikiQuizuDolne.style.display = "none";
+
+    napisKoncowyODP.innerHTML += uzytkownikOpowiedzialPoprawnieNa + "/" + MAXILOSCPYTAN + "!";
+
+    napisKoncowyODP.style.display = "block";
+    napisyKoncowe.style.display = "block";
+    przyciskiKoncowe.style.display = "block";
+
 }
 
 function animowanieZmianyPytania( czyPoprawna )
@@ -137,16 +160,25 @@ function animowanieZmianyPytania( czyPoprawna )
     else{
         document.getElementById("Odliczanie").innerHTML = "<br><br>Bledna odpowiedz!";
     }
-
-    setTimeout(() => {
+    if(aktualnieOdpowiedzialNa < MAXILOSCPYTAN)
+    {
+        setTimeout(() => {
             
-        blockZPytaniem.style.display = "block";
-        przycikiQuizuGorne.style.display = "block";
-        przycikiQuizuDolne.style.display = "block";
+            blockZPytaniem.style.display = "block";
+            przycikiQuizuGorne.style.display = "block";
+            przycikiQuizuDolne.style.display = "block";
 
-        document.getElementById("Odliczanie").style.display = "none";
+            document.getElementById("Odliczanie").style.display = "none";
         
-    }, 1000);
+        }, 1000);
+    }
+    else{
+        setTimeout(() => {
+
+            document.getElementById("Odliczanie").style.display = "none";
+            zaladujEkranKoncowy();
+        }, 1000);
+    }
 }
 
 function KlikniecieKategoriiA()
