@@ -144,6 +144,7 @@ func navTop(relRoot string) string {
 			fmt.Println("Warning: Section", s.title, "should have an index.html file.")
 		}
 	}
+	str += "<a href=\"" + relRoot + "/quiz" + "\">" + "Quiz" + "</a>"
 	return str
 }
 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Próny Wyglad Strony z Skryptem</title>
+    <link href="wyglad.css" rel="stylesheet" type="text/css">
+    <script src="skrypt.js"></script>
+
+  </head>
+  <body>
+    <img src="resources/IMG/Logo.png" class="center" tittle="Przejdz na stronę główną" alt="AngHelp Logo"></img>
+
+    <div id="punktacja">
+      <p id="punktyTekst">Punkty:   </p>  
+      <p id="pkt">0</p>
+    </div>
+
+    <!-- Timer odliczajacy do startu -->
+
+    <div id="Odliczanie">
+      
+      <h1 id="liczba">TenTekstWyswietliSieWTrakcieLadowaniaQuizu</h1>
+      
+    </div>
+
+
+
+    <!-- Wyglad strony w "menu" -->
+<div id ="menuGlowne">
+    <h2>Witaj w Quizie!</h2>
+
+    <h3>Ten quiz pozwoli Ci sprawdzić twoją wiedzę zdobytą na tej stronie</p>
+    <h3>Losowane jest 5 pytań z puli na które trzeba poprawnie odpowiedzieć w formacie A B C D</p>
+    <h2>Wybierz kategorię pytań:</h2>
+</div>
+
+
+
+    <div id="przyciskKategorii">
+      <button onclick="KlikniecieKategoriiA()">Reported Speech</button>
+      <span></span>
+      <button onclick="KlikniecieKategoriiB()">Tenses</button>
+      <span></span>
+      <button onclick="KlikniecieKategoriiC()">kat C</button>
+    </div>
+
+
+<!-- wyglad strony po wlaczeniu slowkowego quizu -->
+
+<p id="slowko">
+  tutaj byłoby pytanie ale nie chce mi się nic czytać więc sobie pisze co kolwiek, 
+  wiec wale jakies inne slowa losowe byle zapchac buffor i miec lepsze spostrzezenie 
+  na przykladowe zdanie elo pozdro xD
+</p>
+
+
+  <div id="przyciskSlowek1">
+    <button>odpowiedz A</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+  </div>
+  <br>
+  <div id="przyciskSlowek2">
+    <button>odpowiedz C</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+  </div> 
+  <div id="przyciskSlowek3">
+    <button>odpowiedz C</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+    <span></span>
+    <button>odpowiedz B</button>
+  </div> 
+
+<!-- wyglad strony po wlaczeniu skowkowego quizu -->
+
+
+
+
+
+
+
+
+    <!-- wyglad strony po wlaczeniu podstawowego quizu -->
+   
+<p id="pytanie">
+  tutaj byłoby pytanie ale nie chce mi się nic czytać więc sobie pisze co kolwiek, 
+  wiec wale jakies inne slowa losowe byle zapchac buffor i miec lepsze spostrzezenie 
+  na przykladowe zdanie elo pozdro xD
+</p>
+
+<br><br><br><br>
+
+  <div id="przyciskQuizu1">
+    <button id ="odpA", onclick="klikniecieOdpowiedziZwyklePytania(0)">odpowiedz A</button>
+    <span></span>
+    <button id="odpB", onclick="klikniecieOdpowiedziZwyklePytania(1)">odpowiedz B</button>
+  </div>
+  <br>
+  <div id="przyciskQuizu2">
+    <button id="odpC", onclick="klikniecieOdpowiedziZwyklePytania(2)">odpowiedz C</button>
+    <span></span>
+    <button id="odpD", onclick="klikniecieOdpowiedziZwyklePytania(3)">odpowiedz D</button>
+  </div>
+
+    <!-- wyglad strony po wlaczeniu podstawowego quizu -->
+
+
+  </body>
+</html>

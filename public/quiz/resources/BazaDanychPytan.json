@@ -1,0 +1,398 @@
+{
+	"kategorie":[
+		{
+			"nazwa": "Change Direct Speech\ninto Reported Speech",
+			"typ": "zwykly",
+			"pytania":[
+				{
+					"tresc": "Monica: \"I'm watching TV:\"",
+					"odpowiedzi":[
+						"Monica said to me that she was watching TV.", 
+                        "Monica told to me that she were watching TV.", 
+                        "Monica told to me that she was watching TV ",
+                        "Monica said me that she was watching TV. ",
+						0
+					]
+				},
+                {
+					"tresc": "We're working.",
+					"odpowiedzi":[
+						"He told me they were working.", 
+                        "He says they were working.", 
+                        "He told me they are working.",
+                        "He says they were working.",
+						0
+					]
+				},
+                {
+					"tresc": "We aren't going to the library.",
+					"odpowiedzi":[
+						"He told me they aren't going to the library.", 
+                        "He told me they went to the library.", 
+                        "He told me they weren't going to the library.",
+                        "He told me they didn’t go to the library.",
+						2
+					]
+				},
+                {
+					"tresc": "We are not visiting Poznań during our trip.",
+					"odpowiedzi":[
+						"He told me they aren't visiting Poznań during their trip.",
+                        "He tells me they aren't visiting Poznań during their trip.",
+                        "He tells me they weren't visiting Poznań during their trip.",
+                        "He told me they weren't visiting Poznań during their trip.",
+						3
+					]
+				},
+                {
+					"tresc": "I said to him, \"Are you going to send a CV?\"",
+					"odpowiedzi":[
+						"I asked him whether he is going to send a CV.",
+                        "I asked him whether he was going to send a CV.",
+                        "I asked if he is going to send a CV.",
+                        "I asked if he were going to send a CV.",
+						1
+					]
+				},
+				{
+					"tresc": "What are you going to do at the weekend?",
+					"odpowiedzi":[
+						"She asked me what I was going to do at the weekend.",
+                        "She said what I was going to do at the weekend.",
+                        "She asked me what I am going to do at the weekend.",
+                        "She said what I was going to do at the weekend.",
+						0
+					]
+				},
+				{
+					"tresc": "Tom said, \"We are working day and night to succeed\"",
+					"odpowiedzi":[
+						"He said that they are working day and night to succeed.",
+                        "He says that they were working day and night to succeed.",
+                        "He says that they are working day and night to succeed.",
+                        "He said that they were working day and night to succeed.",
+						3
+					]
+				},
+				{
+					"tresc": "Which is a reporting verb? ",
+					"odpowiedzi":[
+						"be",
+                        "go",
+                        "tell",
+                        "to",
+						2
+					]
+				},
+				{
+					"tresc": "He said that it was cold outside. Which word is optional?",
+					"odpowiedzi":[
+						"said ",
+                        "that",
+                        "was",
+                        "He",
+						1
+					]
+				},
+				{
+					"tresc": "\"I bought a car last week.\" Last week he said he had bought a",
+					"odpowiedzi":[
+						"car",
+                        "a week ago",
+                        "next week",
+                        "the week before",
+						3
+					]
+				},
+				{
+					"tresc": "\"Where is it?\" said Mary. She ",
+					"odpowiedzi":[
+						"said where it is",
+                        "asked where it was",
+                        "asked if it was there",
+                        "said if it was there",
+						1
+					]
+				},
+				{
+					"tresc": "Which of these is usually required with reported YES/NO questions?",
+					"odpowiedzi":[
+						"if",
+                        "do",
+                        "why",
+                        "no",
+						0
+					]
+				},
+				{
+					"tresc": "Ram asked me where I worked. His original words were \"Do you work there?\"",
+					"odpowiedzi":[
+						"\"Do you work there?\"",
+                        "\"Do I work there?\"",
+                        "\"Where do I work?\"",
+                        "\"Where do you work?\"",
+						3
+					]
+				},
+				{
+					"tresc": "\"Don't yell!\" is a",
+					"odpowiedzi":[
+						"direct request ",
+                        "direct order",
+                        "reported order",
+                        "Reported request",
+						1
+					]
+				},
+				{
+					"tresc": "\"Please wipe your feet.\" I asked them to wipe",
+					"odpowiedzi":[
+						"your feet nicely",
+                        "their feet nicely",
+                        "their feet",
+                        "Your feet",
+						2
+					]
+				},
+				{
+					"tresc": "She always asks me not to burn the cookies. She always says",
+					"odpowiedzi":[
+						"\"Not to burn the cookies!\"",
+                        "\"Please don't burn the cookies.\"",
+                        "\"Do not burn the cookies.\"",
+                        "\"Please not to burn cookies\"",
+						1
+					]
+				},
+                {
+					"tresc": "Which structure is not used for reported orders?",
+					"odpowiedzi":[
+						"order somebody to",
+                        "tell somebody to",
+                        "tell somebody to",
+                        "force somebody to",
+						2
+					]
+				}
+			]
+		},
+
+
+		{
+			"nazwa": "Tenses",
+			"typ": "zwykly",
+			"pytania":[
+				{
+					"tresc": "I was very surprised when she said she ... her exam. ",
+					"odpowiedzi":[
+						"failed", 
+                        "was failed", 
+                        "have failed",
+                        "had failed",
+						3
+					]
+				},
+				{
+					"tresc": "While I was going home, my son ... to France.",
+					"odpowiedzi":[
+						"flew",
+						"flown",
+						"was flying",
+						"has been flying ",
+						2
+					]
+				},
+				{
+					"tresc": "When I was a child I ... tennis twice a week.",
+					"odpowiedzi":[
+						"played",
+						"used to play",
+						"used to play",
+						"was used to play ",
+						1
+					]
+				},
+				{
+					"tresc": "As a young child Kate ... most of her time playing the piano. ",
+					"odpowiedzi":[
+						"spend",
+						"would spend",
+						"had spent",
+						"was spending",
+						1
+					]
+				},
+				{
+					"tresc": "How long ... here?",
+					"odpowiedzi":[
+						"do you wait",
+						"are you waiting",
+						"have you been waiting",
+						"had you been waiting ",
+						2
+					]
+				},
+				{
+					"tresc": "Never ... such a beautiful and smart girl. do I see",
+					"odpowiedzi":[
+						"have I seen",
+						"do I see ",
+						"did I see",
+						"I saw",
+						0
+					]
+				},
+				{
+					"tresc": "What ... so wonderful?",
+					"odpowiedzi":[
+						"smells",
+						"is smelling",
+						"does it smell",
+						"is it smelling",
+						0
+					]
+				},
+				{
+					"tresc": "It's been ages since I last ... you. ",
+					"odpowiedzi":[
+						"saw",
+						"have seen",
+						"had seen",
+						"was seen",
+						0
+					]
+				},
+				{
+					"tresc": "We all knew that something wasn't right, but she didn't want to say what ... ",
+					"odpowiedzi":[
+						"happen",
+						"was happening",
+						"had happened",
+						"happened",
+						2
+					]
+				},
+				{
+					"tresc": "As soon as I ... my money back, I'll buy a new car. ",
+					"odpowiedzi":[
+						"get",
+						"will get",
+						"got",
+						"am getting",
+						0
+					]
+				},
+				{
+					"tresc": "My train ... in half an hour. Could you give me a lift?",
+					"odpowiedzi":[
+						"will leave",
+						"is going to leave",
+						"is leaving",
+						"leaves",
+						3
+					]
+				},
+				{
+					"tresc": "She's nice but I assume we ... as a couple.",
+					"odpowiedzi":[
+						"won't work out ",
+						"wouldn't work out",
+						"are not going to work out",
+						"aren't working out",
+						1
+					]
+				},
+				{
+					"tresc": "Stop shouting at me! You ... my ideas!",
+					"odpowiedzi":[
+						"always criticise",
+						"are always criticising",
+						"have always criticised",
+						"always criticised ",
+						1
+					]
+				},
+				{
+					"tresc": "When I got back home, everybody ... ",
+					"odpowiedzi":[
+						"slept",
+						"was sleeping",
+						"had slept",
+						"had been sleeping",
+						1
+					]
+				},
+				{
+					"tresc": "Next year we ... married for a 20 years. ",
+					"odpowiedzi":[
+						"will be",
+						"will have been being ",
+						"are",
+						"will have been",
+						3
+					]
+				},
+				{
+					"tresc": ". It was obvious that she would pass her exam. She ... for weeks.",
+					"odpowiedzi":[
+						"was preparing",
+						"had been preparing",
+						"prepared",
+						"had prepared",
+						1
+					]
+				},
+				{
+					"tresc": "Look at his white face. He ...",
+					"odpowiedzi":[
+						"will faint",
+						"is fainting",
+						"is going to faint",
+						"have fainted",
+						2
+					]
+				},
+				{
+					"tresc": "This time tomorrow I ... to Greece.",
+					"odpowiedzi":[
+						"will fly",
+						"am flying",
+						"will be flying",
+						"will have been flying",
+						2
+					]
+				},
+				{
+					"tresc": "The Internet ... more and more popular. ",
+					"odpowiedzi":[
+						"is getting",
+						"gets",
+						"has been getting",
+						"got",
+						0
+					]
+				},
+				{
+					"tresc": "Look at her. She ...",
+					"odpowiedzi":[
+						"is to cry",
+						"is supposed to cry",
+						"is due to cry",
+						"is about to cry",
+						3
+					]
+				}
+			]
+		},
+		{
+			
+			"nazwa": "słowa",
+			"typ": "slowa",
+			"slowa": {
+				"biegać": "to run",
+				"siedzieć": "to sit",
+				"skakać": "to jump"
+			}
+		}
+	]
+}
