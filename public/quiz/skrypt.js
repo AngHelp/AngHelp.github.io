@@ -49,7 +49,7 @@ function zaladujMenuQuizu(slowo)
 
 async function wczytajPytaniaDoQuizu( numerKategorii )
 {
-    let url = "/resources/BazaDanychPytan.json";
+    let url = "./resources/BazaDanychPytan.json";
     let response = await fetch(url);
     ObiektJSONzPytaniami = await response.json(); 
     iloscPytanwPlikuJSONDanejwKategorii = ObiektJSONzPytaniami.kategorie[numerKategorii].pytania.length;
