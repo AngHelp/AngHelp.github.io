@@ -1,8 +1,8 @@
 body {
-  background-image: url("resources/IMG/bigben3.png");
+  background-image: url("resources/IMG/bigben3V2.png");
 
   background-color: #cccccc;
-  background-repeat: no-repeat;
+  background-repeat:no-repeat;
   background-size: 100%;
   background-position-x: 50%;
 
@@ -49,6 +49,7 @@ button{
   font-size: 30px;
   
 }
+
 /* tutaj przyciski quizu gorne i dolne */
 
 #przyciskQuizu1{
@@ -98,6 +99,30 @@ h3{
   text-align: center;
   font-style: normal;
   font-size: 30px;
+}
+
+#przyciskpowrotu{
+    width: 290px;
+    height: auto;
+    font-size: 20px;
+    background-color: #a3a3a3;
+
+}
+#przyciskKolaRatunkowego{
+    width: 290px;
+    height: auto;
+    font-size: 20px;
+    background-color: #a3a3a3;
+    text-align: center;
+}
+
+#przyciskiDodatkowe{
+  display: none;
+
+  margin-top: 20px;
+
+  text-align: right;
+  padding-right: 3%;
 }
 
 #przyciskKategorii{
@@ -161,9 +186,26 @@ text-align: center;
   display: none;
 
   font-weight: bolder;
-padding-left: 80%;
+padding-left: 54%;
 
 }
+
+#listaOdpowiedzi{
+  margin-top: 20px;
+  display: none;
+  text-align: center;
+
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:510;
+  font-size: 30px;
+}
+
+ul{
+  padding-top: 5px;
+  padding-bottom: 32px;
+
+}
+
 
 #punktyTekst{
   font-size: 400%;
@@ -177,13 +219,28 @@ padding-left: 80%;
   padding-top: 0%;
   line-height: 5%;
 }
+
+#ktorePytanieTekst{
+  font-size: 400%;
+  padding-bottom: 0%;
+  padding-top: 0%;
+  line-height: 5%;
+}
+#ktorePytanie{
+  font-size: 400%;
+  padding-bottom: 0%;
+  padding-top: 0%;
+  line-height: 5%;
+}
+
+
 @media (max-width: 900px) {
 span{
   display: flex;
   padding: 5px;
 }
 body {
-  background-image: url("resources/IMG/bigben2.png");
+  background-image: url("resources/IMG/bigben2V2.png");
 
   background-color: #cccccc;
   background-repeat:no-repeat;
@@ -200,12 +257,44 @@ body {
   width: 50%;
 }
 
+
+#przyciskiDodatkowe{
+  display: none;
+
+  margin-top: 20px;
+
+  text-align: center;
+}
+
   #przyciskKategorii{
     display: block;
   
     text-align:center;
     padding: 5px;
   }
+
+  #punktacja{
+    display: none;
+  
+    font-weight: bolder;
+  padding-left: 7%;
+  padding-right: 12%;
+  }
+
+  #przyciskpowrotu{
+    width: 290px;
+    height: auto;
+    font-size: 20px;
+    background-color: #919191;
+
+}
+#przyciskKolaRatunkowego{
+    width: 290px;
+    height: auto;
+    font-size: 20px;
+    background-color: #919191;
+    text-align: center;
+}
 
   #przyciskQuizu1{
     display: none;
@@ -220,13 +309,6 @@ body {
     padding: 5px;
   }
 
-  #punktacja{
-    display: none;
-  
-    font-weight: bolder;
-  padding-left: 60%;
-  
-  }  
   #punktyTekst{
     font-size: 400%;
     padding-bottom: 0%;
