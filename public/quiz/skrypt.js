@@ -1,12 +1,13 @@
 let uzytkownikOpowiedzialPoprawnieNa = 0;
 let uzyteIndeksyPytan = [];
+let indeksyOdpNaKtoreOdpowiedzial = [];
 let ObiektJSONzPytaniami;
 let iloscPytanwPlikuJSONDanejwKategorii;
 let numerWybranejKategorii;
 let POPRAWNAODPOWIEDZ;
 
 const MAXILOSCPYTAN = 5;
-let aktualnieOdpowiedzialNa = 0;
+let aktualnieOdpowiedzialNa = 1;
 
 
 function usunMenuGlowne()
@@ -27,7 +28,10 @@ function wyswietlQuiz()
     var przycikiQuizuDolne = document.getElementById("przyciskQuizu2");
     var blockZPytaniem = document.getElementById("pytanie");
     let punkty = document.getElementById("punktacja");
-
+    let przyciskpowrotu = document.getElementById("przyciskiDodatkowe");
+    
+    
+    przyciskpowrotu.style.display = "block";
     blockZPytaniem.style.display = "flex";
     przycikiQuizuGorne.style.display = "block";
     przycikiQuizuDolne.style.display = "block";
@@ -50,7 +54,7 @@ function zaladujMenuQuizu(slowo)
 
 async function wczytajPytaniaDoQuizu( numerKategorii )
 {
-    let url = "./resources/BazaDanychPytan.json";
+    let url = "../resources/BazaDanychPytan.json";
     let response = await fetch(url);
     ObiektJSONzPytaniami = await response.json(); 
     iloscPytanwPlikuJSONDanejwKategorii = ObiektJSONzPytaniami.kategorie[numerKategorii].pytania.length;
@@ -78,8 +82,9 @@ function zaladujSlowka(slowo)
 function zaladujPytanie()
 {   
     document.getElementById("pkt").innerHTML = uzytkownikOpowiedzialPoprawnieNa;
+    document.getElementById("ktorePytanie").innerHTML = aktualnieOdpowiedzialNa + "/" + MAXILOSCPYTAN;
 
-    if(aktualnieOdpowiedzialNa < MAXILOSCPYTAN)
+    if(aktualnieOdpowiedzialNa <= MAXILOSCPYTAN)
     {
         if(ObiektJSONzPytaniami['kategorie'][numerWybranejKategorii]['typ'] == "zwykly")
         {
@@ -88,8 +93,7 @@ function zaladujPytanie()
             let indeksPytania;
             do
             {        
-
-                indeksPytania = Math.floor(Math.random() * (iloscPytanwPlikuJSONDanejwKategorii + 1));
+                indeksPytania = Math.floor(Math.random() * (iloscPytanwPlikuJSONDanejwKategorii));
 
             }while(pomocLadowaniaPytan( indeksPytania ));
             uzyteIndeksyPytan.push(indeksPytania);
@@ -128,53 +132,72 @@ function zaladujEkranKoncowy()
     var przycikiQuizuGorne = document.getElementById("przyciskQuizu1");
     var przycikiQuizuDolne = document.getElementById("przyciskQuizu2");
     var blockZPytaniem = document.getElementById("pytanie");
-    
-    
+
     blockZPytaniem.style.display = "none";
     przycikiQuizuGorne.style.display = "none";
     przycikiQuizuDolne.style.display = "none";
 
     napisKoncowyODP.innerHTML += uzytkownikOpowiedzialPoprawnieNa + "/" + MAXILOSCPYTAN + "!";
 
+    document.getElementById("ktorePytanie").innerHTML = MAXILOSCPYTAN.toString() + "/" + MAXILOSCPYTAN.toString();
     napisKoncowyODP.style.display = "block";
     napisyKoncowe.style.display = "block";
     przyciskiKoncowe.style.display = "block";
 
 }
 
-function animowanieZmianyPytania( czyPoprawna )
+function animowanieZmianyPytania( tekst )
 {
     var przycikiQuizuGorne = document.getElementById("przyciskQuizu1");
     var przycikiQuizuDolne = document.getElementById("przyciskQuizu2");
     var blockZPytaniem = document.getElementById("pytanie");
-
+    let przyciskpowrotu = document.getElementById("przyciskiDodatkowe");
+    let punktacjaV = document.getElementById("punktacja");
+    
+    punktacjaV.style.display = "none";
+    przyciskpowrotu.style.display = "none";
     blockZPytaniem.style.display = "none";
     przycikiQuizuGorne.style.display = "none";
     przycikiQuizuDolne.style.display = "none";
+    
+    document.getElementById("odpA").style.opacity = 1.0;
+    document.getElementById("odpA").style.cursor = "pointer";
+    document.getElementById("odpA").disabled = false;
+
+    document.getElementById("odpB").style.opacity = 1.0;
+    document.getElementById("odpB").style.cursor = "pointer";
+    document.getElementById("odpB").disabled = false;
+
+    document.getElementById("odpC").style.opacity = 1.0;
+    document.getElementById("odpC").style.cursor = "pointer";
+    document.getElementById("odpC").disabled = false;
+
+    document.getElementById("odpD").style.opacity = 1.0;
+    document.getElementById("odpD").style.cursor = "pointer";
+    document.getElementById("odpD").disabled = false;
+
 
     document.getElementById("Odliczanie").style.display = "block";
-    if(czyPoprawna)
-    {
-        document.getElementById("Odliczanie").innerHTML = "<br><br>Poprawna odpowiedz!";
-    }
-    else{
-        document.getElementById("Odliczanie").innerHTML = "<br><br>Bledna odpowiedz!";
-    }
-    if(aktualnieOdpowiedzialNa < MAXILOSCPYTAN)
+    document.getElementById("Odliczanie").innerHTML = "<br>" + tekst;
+
+    if(aktualnieOdpowiedzialNa <= MAXILOSCPYTAN || tekst == "Użyłeś koła ratunkowego!")
     {
         setTimeout(() => {
             
             blockZPytaniem.style.display = "block";
             przycikiQuizuGorne.style.display = "block";
             przycikiQuizuDolne.style.display = "block";
+            punktacjaV.style.display = "flex";
 
             document.getElementById("Odliczanie").style.display = "none";
+            przyciskpowrotu.style.display = "block";
         
         }, 1000);
     }
     else{
         setTimeout(() => {
 
+            punktacjaV.style.display = "flex";
             document.getElementById("Odliczanie").style.display = "none";
             zaladujEkranKoncowy();
         }, 1000);
@@ -207,13 +230,176 @@ function klikniecieOdpowiedziZwyklePytania( ktoWywoluje )
     if(ktoWywoluje == POPRAWNAODPOWIEDZ)
     {
         uzytkownikOpowiedzialPoprawnieNa++;
-        animowanieZmianyPytania(1);
+        animowanieZmianyPytania("Poprawna odpowiedź!");
         zaladujPytanie();
     }
     else
     {
-        animowanieZmianyPytania(0);
+        animowanieZmianyPytania("Błędna odpowiedź!");
         zaladujPytanie();
     }
+    indeksyOdpNaKtoreOdpowiedzial.push(ktoWywoluje);
 }
 
+function uzycieKolaRatunkowego()
+{
+    animowanieZmianyPytania("Użyłeś koła ratunkowego!");
+
+    let numerOdpowiedzi1;
+    let numerOdpowiedzi2;
+    do
+    {
+        numerOdpowiedzi1 = Math.floor(Math.random() * 4);
+
+    }while(numerOdpowiedzi1 == POPRAWNAODPOWIEDZ);  // tak dlugo jak bedzie losowac wartosc numeruOdpowiedzi równą poprawnej
+
+    do
+    {
+        numerOdpowiedzi2 = Math.floor(Math.random() * 4);
+
+    }while(numerOdpowiedzi2 == POPRAWNAODPOWIEDZ || numerOdpowiedzi2 == numerOdpowiedzi1);  // tak dlugo jak bedzie losowac wartosc numeruOdpowiedzi równą poprawnej
+
+    switch(numerOdpowiedzi1)
+    {
+        case 0:
+            document.getElementById("odpA").style.opacity = 0.6;
+            document.getElementById("odpA").style.cursor = "not-allowed";
+            document.getElementById("odpA").disabled = true;
+
+        break;
+
+        case 1:
+            document.getElementById("odpB").style.opacity = 0.6;
+            document.getElementById("odpB").style.cursor = "not-allowed";
+            document.getElementById("odpB").disabled = true;
+        break;
+
+        case 2:
+            document.getElementById("odpC").style.opacity = 0.6;
+            document.getElementById("odpC").style.cursor = "not-allowed";
+            document.getElementById("odpC").disabled = true;
+        break;
+
+        case 3:
+            document.getElementById("odpD").style.opacity = 0.6;
+            document.getElementById("odpD").style.cursor = "not-allowed";
+            document.getElementById("odpD").disabled = true;
+        break;
+    }
+
+    switch(numerOdpowiedzi2)
+    {
+        case 0:
+            document.getElementById("odpA").style.opacity = 0.6;
+            document.getElementById("odpA").style.cursor = "not-allowed";
+            document.getElementById("odpA").disabled = true;
+
+        break;
+
+        case 1:
+            document.getElementById("odpB").style.opacity = 0.6;
+            document.getElementById("odpB").style.cursor = "not-allowed";
+            document.getElementById("odpB").disabled = true;
+        break;
+
+        case 2:
+            document.getElementById("odpC").style.opacity = 0.6;
+            document.getElementById("odpC").style.cursor = "not-allowed";
+            document.getElementById("odpC").disabled = true;
+        break;
+
+        case 3:
+            document.getElementById("odpD").style.opacity = 0.6;
+            document.getElementById("odpD").style.cursor = "not-allowed";
+            document.getElementById("odpD").disabled = true;
+        break;
+    }
+
+    document.getElementById("przyciskKolaRatunkowego").style.opacity = 0.6;
+    document.getElementById("przyciskKolaRatunkowego").style.cursor = "not-allowed";
+    document.getElementById("przyciskKolaRatunkowego").disabled = true;
+}
+
+function zobaczPoprawneOdpowiedzi()
+{
+    let przyciskPowrotu = document.getElementById("zobaczOdpowiedzi");
+    let przyciskLadowaniaPoprawnych = document.getElementById("strGlowna");
+    let listaOdpowiedzi = document.getElementById("listaOdpowiedzi");
+    let punktacjaV = document.getElementById("punktacja");
+
+    let przyciskiDodatkowe = document.getElementById("przyciskiDodatkowe");
+    let przyciskKolRatunkowych = document.getElementById("przyciskKolaRatunkowego");
+
+    punktacjaV.style.display = "none";
+    przyciskPowrotu.style.display = "none";
+    przyciskLadowaniaPoprawnych.style.display = "none";
+
+    przyciskKolRatunkowych.style.display = "none"
+    przyciskiDodatkowe.style.display = "block";
+    przyciskiDodatkowe.style.paddingLeft = "10%";
+
+    listaOdpowiedzi.style.display = "block";
+    // GENERATOR ODPOWIEDZI
+    let completelist= document.getElementById("thelist");
+    
+    let skrotJSON = ObiektJSONzPytaniami.kategorie[numerWybranejKategorii];  
+    for(let i = 0; i < uzyteIndeksyPytan.length; i++)
+    {
+        if(ObiektJSONzPytaniami['kategorie'][numerWybranejKategorii]['typ'] == "zwykly")
+        {
+            let numerPytania = (i + 1).toString();
+
+            completelist.innerHTML += 
+            "<li>"+ skrotJSON.pytania[uzyteIndeksyPytan[i]].tresc + 
+            "<ul>" +  
+                "<li id=\"" + numerPytania + "odp1\">" + skrotJSON.pytania[uzyteIndeksyPytan[i]].odpowiedzi[0] + "</li>" +
+                "<li id=\"" + numerPytania + "odp2\">" + skrotJSON.pytania[uzyteIndeksyPytan[i]].odpowiedzi[1] + "</li>" +
+                "<li id=\"" + numerPytania + "odp3\">" + skrotJSON.pytania[uzyteIndeksyPytan[i]].odpowiedzi[2] + "</li>" +
+                "<li id=\"" + numerPytania + "odp4\">" + skrotJSON.pytania[uzyteIndeksyPytan[i]].odpowiedzi[3] + "</li>" +
+            "</ul>"
+      
+            + "</li>"; 
+        }
+    }
+    for(let i = 0; i < uzyteIndeksyPytan.length; i++)
+    {
+        let numerPytania = (i + 1).toString();
+
+        let odp1 = document.getElementById(numerPytania + "odp1");
+        let odp2 = document.getElementById(numerPytania + "odp2");
+        let odp3 = document.getElementById(numerPytania + "odp3");
+        let odp4 = document.getElementById(numerPytania + "odp4");
+    
+    
+            switch(indeksyOdpNaKtoreOdpowiedzial[i])
+            {
+                case 0:
+                    odp1.style.color = "#C21807"
+                    break;
+                case 1:
+                    odp2.style.color = "#C21807"
+                    break;
+                case 2:
+                    odp3.style.color = "#C21807"
+                    break;
+                case 3:
+                    odp4.style.color = "#C21807"
+                    break;
+            }
+            switch(skrotJSON.pytania[uzyteIndeksyPytan[i]].odpowiedzi[4])
+            {
+                case 0:
+                    odp1.style.color = "#26580F"
+                    break;
+                case 1:
+                    odp2.style.color = "#26580F"
+                    break;
+                case 2:
+                    odp3.style.color = "#26580F"
+                    break;
+                case 3:
+                    odp4.style.color = "#26580F"
+                    break;
+            }
+        }
+}
