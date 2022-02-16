@@ -95,13 +95,13 @@
 					]
 				},
 				{
-					"tresc": "\"I bought a car last week.\" Last week he said he had bought a",
+					"tresc": "\"I bought a car last week.\" Last week he said he had bought a car",
 					"odpowiedzi":[
-						"car",
                         "a week ago",
                         "next week",
                         "the week before",
-						3
+						"The week next ago",
+						2
 					]
 				},
 				{
@@ -171,7 +171,7 @@
                         "say somebody to",
                         "tell somebody to",
                         "force somebody to",
-						2
+						1
 					]
 				}
 			]
