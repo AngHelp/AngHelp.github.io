@@ -14,6 +14,8 @@ Do pliku z folderu `src/` należy dodać komentarz z tytułem strony, w taki spo
 
 Jeżeli w pliku w folderze `src/` znajduje się komentarz `<!-- @no-nav -->`, to do niego nie będzie dodanego menu nawigacyjnego. W tym przypadku znacznik `<body>` będzie miał klasę `no-nav`, którą można użyć do ukrycia przycisku hamburgera w CSS.
 
+Do pliku można dodać dodatkową zawartość stopki, w taki sposób: `<!-- @footer: Autor podcastu: Jan Kowalski -->`.
+
 ### Plik formatu strony
 
 Plik `format.html` jest używany przez generator stron jako schemat, który określa jak wyglądają wyjściowe pliki. Podmieniane teksty:
@@ -25,4 +27,6 @@ Plik `format.html` jest używany przez generator stron jako schemat, który okre
 {nav-top} -> linki do poszczególnych sekcji strony
 {nav} -> menu nawigacyjne
 {main} -> zawartość strony
+{logo}. {logo-b} -> ścieżka do loga strony
+{footer} -> stopka strony
 ```

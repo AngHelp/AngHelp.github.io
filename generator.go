@@ -177,6 +177,12 @@ func generateFile(src string, dest string) error {
 		navClass = "no-nav"
 	}
 
+	footer := conf["footer"]
+	if footer != "" {
+		footer = "<br><p>" + footer + "</p>"
+	}
+	footer = "<p>Autorzy strony:</p><ul><li>Patryk Koszlaga,</li><li>Mateusz Tomaszewski,</li><li>Mateusz Mariasik</li></ul>" + footer
+
 	relRoot, err := filepath.Rel(filepath.Dir(dest), "public")
 	if err != nil {
 		log.Panicln("Couldn't get relative path to public/: ", err)
@@ -198,6 +204,9 @@ func generateFile(src string, dest string) error {
 		"{nav-top}", navTop(relRoot),
 		"{nav}", nav,
 		"{main}", main,
+		"{logo}", relRoot+"/img/logo.png",
+		"{logo-b}", relRoot+"/img/logo-b.png",
+		"{footer}", footer,
 	)
 
 	out.WriteString(replacer.Replace(format))

@@ -1,15 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+:root {
+    --background-color: #DEE2E6;
+    --text: black;
+}
+
+.logo-b {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #212529;
+        --text: white;
+    }
+
+    body {
+        background-image: url("img/tlo2.jpg") !important;
+    }
+
+    .logo-b {
+        display: unset;
+    }
+
+    .logo-a {
+        display: none;
+    }
+}
+
 body {
     font-family: Inter, sans-serif;
     font-size: 12pt;
     padding: 15px;
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1500px;
     display: grid;
     grid-template-columns: max-content 2fr;
     grid-template-rows: max-content 1fr;
     gap: 15px;
+    background-image: url("img/tlo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text);
 }
 
 header {
@@ -18,12 +51,28 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 32px;
+
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 5px 0;
+    text-align: right;
 }
 
 header > * {
-    font-size: 12pt;
-    margin: 0;
-    margin-right: 15px;
+    font-size: 16pt;
+    margin: 0 15px;
+}
+
+header a:nth-of-type(2) {
+    margin-left: auto;
+}
+
+header img {
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
 }
 
 header a {
@@ -38,6 +87,28 @@ header a:hover {
     color: #676767;
     text-decoration: underline;
     text-underline-offset: 2px;
+}
+
+footer {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 40px;
+
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+footer * {
+    margin: 0;
+}
+
+footer p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+footer ul {
+    padding-left: 16px;
 }
 
 nav li {
@@ -62,7 +133,7 @@ nav a:hover {
 }
 
 nav .parent a:hover {
-    color: black;
+    color: var(--text);
 }
 
 nav ul {
@@ -87,7 +158,7 @@ nav {
 }
 
 nav .parent {
-    color: black;
+    color: var(--text);
 }
 
 nav .current a {
@@ -110,12 +181,48 @@ main :first-child {
     margin-top: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px, 1fr));
+    width: 100%;
+    margin-top: 40px;
+    gap: 40px;
+}
+
+.cards a {
+    padding: 36px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: block;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    color: var(--text);
+    text-decoration: none;
+    text-align: center;
+}
+
+.cards a:hover {
+    box-shadow:
+    -7px -7px 20px 0px #CED4DA,
+    -4px -4px 5px 0px #CED4DA,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+}
+
+.cards img {
+    height: 195px;
+}
+
 .hamburger {
     display: none;
     font-size: 0;
     border: 1px solid transparent;
     border-radius: 6px;
-    background-color: white;
+    background-color: #f0f0f0;
     padding: 3px;
 }
 
@@ -142,8 +249,13 @@ main :first-child {
         top: 0;
         margin: 0 -15px;
         padding: 5px 15px;
-        background-color: white;
-        border-bottom: 1px solid #d6d7db;
+        border-radius: 0;
+    }
+    header * {
+        font-size: 12pt;
+    }
+    header img {
+        max-height: 32px;
     }
     .hamburger {
         display: unset;
