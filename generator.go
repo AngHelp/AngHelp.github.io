@@ -191,8 +191,10 @@ func generateFile(src string, dest string) error {
 	nav := ""
 	if filepath.Base(filepath.Dir(src)) != "src" {
 		section := strings.Split(src, "/")[1]
-		nav = "<nav>" + navHTML(src, relRoot, section) + "</nav>"
+		nav = navHTML(src, relRoot, section)
 	}
+
+	nt := navTop(relRoot)
 
 	replacer := strings.NewReplacer(
 		"{style.css}", relRoot+"/style.css",
@@ -201,8 +203,8 @@ func generateFile(src string, dest string) error {
 		"{nav-class}", navClass,
 		//"{vocabulary}", relRoot+"/vocabulary/index.html",
 		//"{grammar}", relRoot+"/grammar/index.html",
-		"{nav-top}", navTop(relRoot),
-		"{nav}", nav,
+		"{nav-top}", nt,
+		"{nav}", "<nav><div class=\"nav-top\">"+nt+"</div>"+nav+"</nav>",
 		"{main}", main,
 		"{logo}", relRoot+"/img/logo.png",
 		"{logo-b}", relRoot+"/img/logo-b.png",
