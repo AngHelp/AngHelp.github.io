@@ -3,6 +3,13 @@
 :root {
     --background-color: #DEE2E6;
     --text: black;
+    --separator: #c7c7c7;
+    --nav-parent-fg: white;
+    --nav-hover-bg: #e1e1e1;
+    --nav-hover-fg: #c9c9c9;
+    --nav-fg: #676767;
+    --nav-current-fg: #f0f2f4;
+    --nav-current-bg: #2188ff;
 }
 
 .logo-b {
@@ -13,6 +20,13 @@
     :root {
         --background-color: #212529;
         --text: white;
+        --separator: #3e3e3e;
+        --nav-parent-fg: white;
+        --nav-hover-bg: #4e4e4e;
+        --nav-hover-fg: #c9c9c9;
+        --nav-fg: #676767;
+        --nav-current-fg: #f0f2f4;
+        --nav-current-bg: #2188ff;
     }
 
     body {
@@ -128,12 +142,12 @@ nav > ul > li:first-of-type a {
 }
 
 nav a:hover {
-    color: #444;
-    background-color: #f0f2f4;
+    color: var(--nav-hover-fg);
+    background-color: var(--nav-hover-bg);
 }
 
 nav .parent a:hover {
-    color: var(--text);
+    color: var(--nav-parent-fg);
 }
 
 nav ul {
@@ -149,12 +163,12 @@ nav > ul {
 nav {
     grid-column: 1;
     grid-row: 2;
-    color: #676767;
+    color: var(--nav-fg);
     width: max-content;
     max-width: 180px;
     padding-right: 8px;
     margin-right: 2px;
-    border-right: 1px solid #eeeff2;
+    border-right: 1px solid var(--separator);
 }
 
 nav .parent {
@@ -162,8 +176,8 @@ nav .parent {
 }
 
 nav .current a {
-    background-color: #2188ff;
-    color: #f0f2f4;;
+    background-color: var(--nav-current-bg);
+    color: var(--nav-current-fg);
     font-weight: bold;
 }
 
