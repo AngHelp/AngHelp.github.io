@@ -4,9 +4,9 @@
     --background-color: #DEE2E6;
     --text: black;
     --separator: #c7c7c7;
-    --nav-parent-fg: white;
-    --nav-hover-bg: #e1e1e1;
-    --nav-hover-fg: #c9c9c9;
+    --nav-parent-fg: black;
+    --nav-hover-bg: #dbdbdb;
+    --nav-hover-fg: #323232;
     --nav-fg: #676767;
     --nav-current-fg: #f0f2f4;
     --nav-current-bg: #2188ff;
@@ -25,8 +25,8 @@
         --nav-hover-bg: #4e4e4e;
         --nav-hover-fg: #c9c9c9;
         --nav-fg: #676767;
-        --nav-current-fg: #f0f2f4;
-        --nav-current-bg: #2188ff;
+        --nav-current-fg: #c7c7c7;
+        --nav-current-bg: #0f488b;
     }
 
     body {
