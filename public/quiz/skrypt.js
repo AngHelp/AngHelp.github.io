@@ -43,11 +43,10 @@ function zaladujMenuQuizu(slowo)
     document.getElementById("Odliczanie").style.display = "block";
         document.getElementById("Odliczanie").innerHTML = "<br><br>" + slowo;
         setTimeout(() => {
-            
             document.getElementById("Odliczanie").style.display = "none";
             wyswietlQuiz();
             zaladujPytanie();
-            //funkcje po załadowaniu quizu
+                //funkcje po załadowaniu quizu
         }, 3500);
       
 }
@@ -61,22 +60,14 @@ async function wczytajPytaniaDoQuizu( numerKategorii )
     numerWybranejKategorii = numerKategorii;
 }
 
-function wyswietlSlowka()
+function pomocLadowaniaBlednychSlowek(indekss, tabIndeksow = [])
 {
-
-}
-
-function zaladujSlowka(slowo)
-{
-    document.getElementById("Odliczanie").style.display = "block";
-        document.getElementById("Odliczanie").innerHTML = "<br><br>" + slowo;
-        setTimeout(() => {
-            
-            document.getElementById("Odliczanie").style.display = "none";
-            wyswietlSlowka();
-            //funkcje po załadowaniu quizu
-        }, 3500);
-      
+    for(let i = 0; i < tabIndeksow.length; i++)
+    {
+        if(tabIndeksow[i] == indekss)
+            return true;
+    }
+    return false;
 }
 
 function zaladujPytanie()
@@ -110,6 +101,63 @@ function zaladujPytanie()
             document.getElementById("odpD").innerHTML = skrotJSON.pytania[indeksPytania].odpowiedzi[3];
 
             // generowanie
+        }
+        else if(ObiektJSONzPytaniami['kategorie'][numerWybranejKategorii]['typ'] == "slowa")
+        {
+            // generuje pytanie, rozne od poprzednich
+            aktualnieOdpowiedzialNa++;
+            let skrotJSON = ObiektJSONzPytaniami.kategorie[numerWybranejKategorii];
+            let pytanie = Object.entries(skrotJSON.pytania);
+            let indeksPytania;
+            do
+            {        
+                indeksPytania = Math.floor(Math.random() * pytanie.length);
+
+            }while(pomocLadowaniaPytan( indeksPytania ));
+            uzyteIndeksyPytan.push(indeksPytania);
+       
+            let kierunek = Math.random() < 0.5 ? 1 : 0;
+
+
+            let poprawna = pytanie[indeksPytania][kierunek];
+            let odpALL = [];
+
+            odpALL.push("@" + poprawna);
+
+            let terazUzyteIndeksy = [];
+            for(let i = 0; i < 3; i++)
+            {
+                let indexNiePODP;     
+                do
+                {        
+                    indexNiePODP = Math.floor(Math.random() * pytanie.length);
+    
+                }while(pomocLadowaniaPytan( indexNiePODP ) || pomocLadowaniaBlednychSlowek(indexNiePODP, terazUzyteIndeksy)); 
+                odpALL.push(pytanie[indexNiePODP][kierunek]);
+                terazUzyteIndeksy.push(indexNiePODP);
+            }
+            
+            permutacja(odpALL);
+
+
+            for(let i = 0; i < 4; i++)
+            {
+                if(odpALL[i][0] === "@")
+                {
+                    odpALL[i] = odpALL[i].slice(1);
+                    POPRAWNAODPOWIEDZ = i;
+                    break;
+                }   
+            }
+
+            document.getElementById("pytanie").innerHTML = pytanie[indeksPytania][Math.abs(kierunek - 1)];
+
+            document.getElementById("odpA").innerHTML = odpALL[0];
+            document.getElementById("odpB").innerHTML = odpALL[1]; 
+            document.getElementById("odpC").innerHTML = odpALL[2]; 
+            document.getElementById("odpD").innerHTML = odpALL[3]; 
+
+            // todo
         }
     }
 }
@@ -221,8 +269,8 @@ function KlikniecieKategoriiB()
 function KlikniecieKategoriiC()
 {
     usunMenuGlowne();
-    zaladujSlowka("Slowka");
-    //tutaj funkcje ładowania pytań(ten segment będzie się wykonywać w tle)
+    zaladujMenuQuizu("Vocabulary");
+    wczytajPytaniaDoQuizu(2);
 }
 
 function klikniecieOdpowiedziZwyklePytania( ktoWywoluje )
@@ -322,6 +370,52 @@ function uzycieKolaRatunkowego()
 
 function zobaczPoprawneOdpowiedzi()
 {
+    if(numerWybranejKategorii < 2) zobaczPoprawneOdpowiedziPytania();
+    else if(numerWybranejKategorii == 2) zobaczPoprawneOdpowiedziSlowka();
+}
+
+function zobaczPoprawneOdpowiedziSlowka()
+{
+    let przyciskPowrotu = document.getElementById("zobaczOdpowiedzi");
+    let przyciskLadowaniaPoprawnych = document.getElementById("strGlowna");
+    let listaOdpowiedzi = document.getElementById("listaOdpowiedzi");
+    let punktacjaV = document.getElementById("punktacja");
+
+    let przyciskiDodatkowe = document.getElementById("przyciskiDodatkowe");
+    let przyciskKolRatunkowych = document.getElementById("przyciskKolaRatunkowego");
+
+    punktacjaV.style.display = "none";
+    przyciskPowrotu.style.display = "none";
+    przyciskLadowaniaPoprawnych.style.display = "none";
+
+    przyciskKolRatunkowych.style.display = "none"
+    przyciskiDodatkowe.style.display = "block";
+    przyciskiDodatkowe.style.paddingLeft = "10%";
+
+    listaOdpowiedzi.style.display = "block";
+    // GENERATOR ODPOWIEDZI
+    let completelist= document.getElementById("thelist");
+
+    let skrotJSON = ObiektJSONzPytaniami.kategorie[numerWybranejKategorii];  
+
+    let pytanie = Object.entries(skrotJSON.pytania);
+  
+    for(let i = 0; i < uzyteIndeksyPytan.length; i++)
+    {
+        if(ObiektJSONzPytaniami['kategorie'][numerWybranejKategorii]['typ'] == "slowa")
+        {
+            let numerPytania = (i + 1).toString();
+            console.log("elo")
+            completelist.innerHTML += 
+            "<li id=\"" + numerPytania + "slowa\">" + pytanie[uzyteIndeksyPytan[i]][0] + " - " + pytanie[uzyteIndeksyPytan[i]][1] + "</li>"; 
+        }
+    }
+}
+
+function zobaczPoprawneOdpowiedziPytania()
+{
+
+    
     let przyciskPowrotu = document.getElementById("zobaczOdpowiedzi");
     let przyciskLadowaniaPoprawnych = document.getElementById("strGlowna");
     let listaOdpowiedzi = document.getElementById("listaOdpowiedzi");
@@ -402,4 +496,13 @@ function zobaczPoprawneOdpowiedzi()
                     break;
             }
         }
+}
+
+let permutacja = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        // Zamieniamy wybrany element z innym losowo wybranym
+        let r = i + Math.floor(Math.random() * (arr.length - i));
+        [arr[i], arr[r]] = [arr[r], arr[i]];
+    }
+    return arr;
 }
