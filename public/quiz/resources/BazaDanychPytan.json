@@ -95,13 +95,13 @@
 					]
 				},
 				{
-					"tresc": "\"I bought a car last week.\" Last week he said he had bought a car",
+					"tresc": "\"I bought a car last week.\" Last week he said he had bought a",
 					"odpowiedzi":[
+						"car",
                         "a week ago",
                         "next week",
                         "the week before",
-						"The week next ago",
-						2
+						3
 					]
 				},
 				{
@@ -166,12 +166,12 @@
 				},
                 {
 					"tresc": "Which structure is not used for reported orders?",
-					"odpowiedzi":[
-						"order somebody to",
-                        "say somebody to",
-                        "tell somebody to",
-                        "force somebody to",
-						1
+					"odpowiedzi": [
+							"order somebody to",
+							"tell somebody to",
+							"ask somebody to",
+							"force somebody to",
+							2
 					]
 				}
 			]
@@ -233,7 +233,7 @@
 					]
 				},
 				{
-					"tresc": "Never ... such a beautiful and smart girl.",
+					"tresc": "Never ... such a beautiful and smart girl. do I see",
 					"odpowiedzi":[
 						"have I seen",
 						"do I see ",
@@ -388,10 +388,31 @@
 			
 			"nazwa": "słowa",
 			"typ": "slowa",
-			"slowa": {
-				"biegać": "to run",
-				"siedzieć": "to sit",
-				"skakać": "to jump"
+			"pytania": {
+				"Threaten" : "grozić" ,
+			 	"Insist on" : "nalegać" ,
+				"Exclaim/remark" : "wykrzyknąć" ,
+				"Complain to somebody of" : "skarżyć się" ,
+				"Admit(to)" : "przyznać się" ,
+				"Sustatin damage" : "odnieść obrażenia" ,
+				"Give chest compressions" : "wykonywać masaż serca" ,
+				"Alleviate stress" : "łagodzić stres" , 
+				 "Concern" : "troska, zaniepokojenie",  
+				"Exvess" : "nadmiar, przesada" , 
+				"Counsellor" : "terapeuta" ,  
+				"Examination" : "badanie" , 
+				"Rehab centre" : "centrum odwykowe" ,  
+				"Take an overdose" : "przedawkować" ,
+				"Tweezers" : "pęseta" ,
+				"Use a defib" : "używać defibrylatora" ,  
+				"Administer first aid" : "udzielać pierwszej pomocy" , 
+				"Release cortisol" : "uwalniać kortyzol" , 
+				"Take preventative measures" : "podjąć środki zapobiegawcze" ,  
+				"Overcome stress" : "zwalczyć stres", 
+				"Stressed" : "zestresowany" ,
+				"Stressless" : "bezstresowy" , 
+				"Unbearable" : "nie do zniesienia" ,  
+				"Carry out a test" : "przeprowadzić badanie"   
 			}
 		}
 	]
