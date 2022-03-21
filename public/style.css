@@ -286,6 +286,21 @@ img {
     margin-bottom: 32px;
 }
 
+audio {
+    display: block;
+    margin: 8px 0 !important;
+}
+
+.audiobtn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+dt {
+    margin-top: 8px;
+}
+
 @media (max-width: 900px) {
     nav {
         display: none;
