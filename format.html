@@ -67,7 +67,7 @@
 				let b = document.createElement("button");
 				b.textContent = "🔊";
 				b.className = "audiobtn";
-				b.onclick = element.play;
+				b.onclick = () => element.play();
 				element.replaceWith(element, b);
 			}
 		</script>

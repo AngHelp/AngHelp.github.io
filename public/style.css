@@ -295,10 +295,12 @@ audio {
     background-color: transparent;
     border: none;
     padding: 0;
+    margin-left: 0.5ch;
 }
 
 dt {
     margin-top: 8px;
+    font-weight: bold;
 }
 
 @media (max-width: 900px) {
