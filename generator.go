@@ -79,7 +79,6 @@ func sliceToPath(path []string) string {
 // Traktuje ścieżkę do katalogu i ścieżkę do pliku
 // index.html w tym samym katalogu jako równe sobie ścieżki.
 func compareSlicePaths(p1 []string, p2 []string) int {
-	fmt.Println(p1, p2)
 	len1 := len(p1)
 	len2 := len(p2)
 	eq := 0
@@ -213,6 +212,7 @@ func generateFile(src string, dest string) error {
 
 	out.WriteString(replacer.Replace(format))
 
+	fmt.Println("+", conf["title"], "("+strings.TrimPrefix(src, "src/")+")")
 	return nil
 }
 
@@ -316,8 +316,6 @@ func main() {
 	if err != nil {
 		log.Panicln("Error when creating navigation tree:", err)
 	}
-	fmt.Println(nav)
-	fmt.Println(nav.children)
 
 	err = filepath.WalkDir("src", handleFile)
 	if err != nil {
