@@ -303,6 +303,10 @@ dt {
     font-weight: bold;
 }
 
+.no-nav nav > ul {
+    display: none;
+}
+
 @media (max-width: 900px) {
     nav {
         display: none;
