@@ -213,7 +213,7 @@ ul{
   line-height: 5%;
 }
 
-@media (orientation: portrait) or (max-width: 900px) {
+@media (orientation: portrait) {
 span{
   display: flex;
   padding: 5px;
