@@ -186,7 +186,7 @@ text-align: center;
   display: none;
 
   font-weight: bolder;
-padding-left: 54%;
+justify-content: end;
 
 }
 
@@ -207,32 +207,11 @@ ul{
 }
 
 
-#punktyTekst{
-  font-size: 400%;
+#punktyTekst, #pkt, #ktorePytanieTekst, #ktorePytanie{
   padding-bottom: 0%;
   padding-top: 0%;
   line-height: 5%;
 }
-#pkt{
-  font-size: 400%;
-  padding-bottom: 0%;
-  padding-top: 0%;
-  line-height: 5%;
-}
-
-#ktorePytanieTekst{
-  font-size: 400%;
-  padding-bottom: 0%;
-  padding-top: 0%;
-  line-height: 5%;
-}
-#ktorePytanie{
-  font-size: 400%;
-  padding-bottom: 0%;
-  padding-top: 0%;
-  line-height: 5%;
-}
-
 
 @media (orientation: portrait) {
 span{
@@ -309,14 +288,7 @@ body {
     padding: 5px;
   }
 
-  #punktyTekst{
-    font-size: 400%;
-    padding-bottom: 0%;
-    padding-top: 0%;
-    line-height: 5%;
-  }
-  #pkt{
-    font-size: 400%;
+  #punktyTekst, #pkt {
     padding-bottom: 0%;
     padding-top: 0%;
     line-height: 5%;
