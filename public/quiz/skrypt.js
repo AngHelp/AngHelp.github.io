@@ -31,7 +31,7 @@ function wyswietlQuiz()
     let przyciskpowrotu = document.getElementById("przyciskiDodatkowe");
     
     
-    przyciskpowrotu.style.display = "block";
+    przyciskpowrotu.style.display = "flex";
     blockZPytaniem.style.display = "flex";
     przycikiQuizuGorne.style.display = "flex";
     przycikiQuizuDolne.style.display = "flex";
@@ -190,7 +190,7 @@ function zaladujEkranKoncowy()
     document.getElementById("ktorePytanie").innerHTML = MAXILOSCPYTAN.toString() + "/" + MAXILOSCPYTAN.toString();
     napisKoncowyODP.style.display = "block";
     napisyKoncowe.style.display = "block";
-    przyciskiKoncowe.style.display = "block";
+    przyciskiKoncowe.style.display = "flex";
 
 }
 
@@ -233,12 +233,12 @@ function animowanieZmianyPytania( tekst )
         setTimeout(() => {
             
             blockZPytaniem.style.display = "block";
-            przycikiQuizuGorne.style.display = "block";
-            przycikiQuizuDolne.style.display = "block";
+            przycikiQuizuGorne.style.display = "flex";
+            przycikiQuizuDolne.style.display = "flex";
             punktacjaV.style.display = "flex";
 
             document.getElementById("Odliczanie").style.display = "none";
-            przyciskpowrotu.style.display = "block";
+            przyciskpowrotu.style.display = "flex";
         
         }, 1000);
     }
@@ -389,8 +389,7 @@ function zobaczPoprawneOdpowiedziSlowka()
     przyciskLadowaniaPoprawnych.style.display = "none";
 
     przyciskKolRatunkowych.style.display = "none"
-    przyciskiDodatkowe.style.display = "block";
-    przyciskiDodatkowe.style.paddingLeft = "10%";
+    przyciskiDodatkowe.style.display = "flex";
 
     listaOdpowiedzi.style.display = "block";
     // GENERATOR ODPOWIEDZI
@@ -429,8 +428,7 @@ function zobaczPoprawneOdpowiedziPytania()
     przyciskLadowaniaPoprawnych.style.display = "none";
 
     przyciskKolRatunkowych.style.display = "none"
-    przyciskiDodatkowe.style.display = "block";
-    przyciskiDodatkowe.style.paddingLeft = "10%";
+    przyciskiDodatkowe.style.display = "flex";
 
     listaOdpowiedzi.style.display = "block";
     // GENERATOR ODPOWIEDZI
