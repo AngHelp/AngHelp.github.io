@@ -279,13 +279,15 @@ body {
     #przyciskQuizu1{
       display: none;
     
-      text-align:center;
+      flex-direction: column;
+      align-items: center;
       padding: 5px;
     }
     #przyciskQuizu2{
       display: none;
     
-      text-align:center;
+      flex-direction: column;
+      align-items: center;
       padding: 5px;
     }
   
