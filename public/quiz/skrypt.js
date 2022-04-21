@@ -30,8 +30,9 @@ function wyswietlQuiz()
     let punkty = document.getElementById("punktacja");
     let przyciskpowrotu = document.getElementById("przyciskiDodatkowe");
     let przyciskKR = document.getElementById("przyciskKolaRatunkowego");
-    
-    
+    let przyciskPowrotu = document.getElementById("przyciskpowrotu");
+
+    przyciskPowrotu.style.display = 'block';
     przyciskKR.style.display = "block";
     przyciskpowrotu.style.display = "flex";
     blockZPytaniem.style.display = "flex";
