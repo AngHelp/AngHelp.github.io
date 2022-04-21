@@ -1,60 +1,6 @@
 <!-- @title: O nas -->
 <!-- @no-nav -->
 
-<style>
-h2 {
-	text-align: center;
-}
-#wstep {
-	text-align: center;
-	
-	margin: 64px auto;
-	max-width: 1180px;
-
-	font-size: 30px;
-	font-weight: bold;
-}
-#odkryj {
-	font-size: 30px;
-	padding: 30px;
-	margin-bottom: 500px;
-	background-color: var(--background-color);
-	border: none;
-	border-radius: 10px;
-	color: var(--text);
-	text-align: center;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	text-decoration: none;
-	width: fit-content;
-}
-
-#baner{
-	width: 100%;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-.zdjecia h2 {
-	margin-top: 150px;
-}
-.zdjecia > div {
-	display: flex;
-	display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.zdjecia figcaption {
-	text-align: center;
-	margin-top: 16px;
-    font-size: 130%;
-}
-</style>
-
 <img style="border-radius: 70px;" id="baner" src="./img/szkola.jpg" alt="XXV LO w Łodzi">
 
 <p id="wstep">We wrześniu 2021 roku otrzymaliśmy zadanie utworzenia strony internetowej, której zadaniem była nauka języka angielskiego. 
@@ -141,3 +87,70 @@ Podzieliliśmy się na drużyny, według umiejętności, i ta strona to efekt na
 		</figure>
 	</div>
 </div>
+
+<style>
+	h2 {
+		text-align: center;
+	}
+	#wstep {
+		text-align: center;
+		
+		margin: 64px auto;
+		max-width: 1180px;
+	
+		font-size: 30px;
+		font-weight: bold;
+	}
+	#odkryj {
+		font-size: 30px;
+		padding: 30px;
+		margin-bottom: 500px;
+		background-color: var(--background-color);
+		border: none;
+		border-radius: 10px;
+		color: var(--text);
+		text-align: center;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		text-decoration: none;
+		width: fit-content;
+	}
+	
+	#baner{
+		width: 100%;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+	.zdjecia h2 {
+		margin-top: 150px;
+	}
+	.zdjecia > div {
+		display: flex;
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.zdjecia figcaption {
+		text-align: center;
+		margin-top: 16px;
+		font-size: 130%;
+	}
+</style>
+
+<script>
+// Łagodne przesunięcie po kliknięciu przycisku "Odkryj nas"
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault();
+
+		document.querySelector(this.getAttribute('href')).scrollIntoView({
+			behavior: 'smooth'
+		});
+	});
+});
+</script>
