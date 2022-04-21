@@ -48,7 +48,8 @@ body {
     height: 150px;
     color: black;
     font-size: 30px;
-    
+    margin-bottom: 4px;
+      margin-top: 4px;
   }
   
   /* tutaj przyciski quizu gorne i dolne */
