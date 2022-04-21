@@ -33,8 +33,8 @@ function wyswietlQuiz()
     
     przyciskpowrotu.style.display = "block";
     blockZPytaniem.style.display = "flex";
-    przycikiQuizuGorne.style.display = "block";
-    przycikiQuizuDolne.style.display = "block";
+    przycikiQuizuGorne.style.display = "flex";
+    przycikiQuizuDolne.style.display = "flex";
     punkty.style.display = "flex";
 }
 
