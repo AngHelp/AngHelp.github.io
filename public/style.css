@@ -220,7 +220,7 @@ main {
     grid-row: 2;
 }
 
-main :first-child {
+main > :first-child {
     margin-top: 0;
 }
 
