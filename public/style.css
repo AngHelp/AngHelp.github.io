@@ -16,6 +16,7 @@
     --hamburger-bg-hover: #f0f2f4;
     --hamburger-bg-focus: #eeeff2;
     --hamburger-color: black;
+    --link: #3333ee;
 }
 
 .cards a:hover {
@@ -47,6 +48,7 @@
         --hamburger-bg-hover: #4b4b4b;
         --hamburger-bg-focus: #5c5c5c;
         --hamburger-color: white;
+        --link: #aaaaee;
     }
 
     .cards a:hover {
@@ -228,6 +230,10 @@ img {
     max-width: 100%;
 }
 
+a {
+    color: var(--link);
+}
+
 .cards {
     display: flex;
     /* grid-template-columns: repeat(auto-fill,minmax(400px, 1fr)); */
@@ -296,6 +302,7 @@ audio {
     border: none;
     padding: 0;
     margin-left: 0.5ch;
+    cursor: pointer;
 }
 
 dt {
