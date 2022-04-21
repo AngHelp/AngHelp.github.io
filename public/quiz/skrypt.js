@@ -12,11 +12,11 @@ let aktualnieOdpowiedzialNa = 1;
 
 function usunMenuGlowne()
 {
-var przyciskiKategorii = document.getElementById("przyciskKategorii");
-var blockZMenuGlownym = document.getElementById("menuGlowne");
+   var przyciskiKategorii = document.getElementById("przyciskKategorii");
+   var blockZMenuGlownym = document.getElementById("menuGlowne");
+   let przyciskPowrotu = document.getElementById("przyciskpowrotu");
 
-
-
+   przyciskPowrotu.style.display = 'none';
    przyciskiKategorii.style.display = 'none';
    blockZMenuGlownym.style.display = "none";
 
