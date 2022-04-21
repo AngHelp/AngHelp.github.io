@@ -228,7 +228,7 @@ function animowanieZmianyPytania( tekst )
     document.getElementById("Odliczanie").style.display = "block";
     document.getElementById("Odliczanie").innerHTML = "<br>" + tekst;
 
-    if(aktualnieOdpowiedzialNa <= MAXILOSCPYTAN || tekst == "Użyłeś koła ratunkowego!")
+    if(aktualnieOdpowiedzialNa <= MAXILOSCPYTAN || tekst == "Użyłeś koła 50/50!")
     {
         setTimeout(() => {
             
@@ -291,7 +291,7 @@ function klikniecieOdpowiedziZwyklePytania( ktoWywoluje )
 
 function uzycieKolaRatunkowego()
 {
-    animowanieZmianyPytania("Użyłeś koła ratunkowego!");
+    animowanieZmianyPytania("Użyłeś koła 50/50!");
 
     let numerOdpowiedzi1;
     let numerOdpowiedzi2;
