@@ -16,6 +16,8 @@ Jeżeli w pliku w folderze `src/` znajduje się komentarz `<!-- @no-nav -->`, to
 
 Do pliku można dodać dodatkową zawartość stopki, w taki sposób: `<!-- @footer: Autor podcastu: Jan Kowalski -->`.
 
+Do pliku można dodać też klucz: `<!-- @key: 123 --->`. Strony w menu nawigacyjnym są według niego posortowane (rosnąco). Domyślnie wynosi 1000.
+
 ### Plik formatu strony
 
 Plik `format.html` jest używany przez generator stron jako schemat, który określa jak wyglądają wyjściowe pliki. Podmieniane teksty:

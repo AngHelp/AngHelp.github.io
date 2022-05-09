@@ -8,6 +8,8 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
+	"strconv"
 	"strings"
 
 	_ "embed"
@@ -20,6 +22,7 @@ type navElement struct {
 	name     string       // file/directory name, directories contain trailing slash
 	link     bool         // true if the directory has an index.html child, true for all files
 	title    string       // pretty title
+	key      int          // used for document sorting
 	children []navElement // does not contain index.html
 }
 
@@ -143,7 +146,6 @@ func navTop(relRoot string) string {
 			fmt.Println("Warning: Section", s.title, "should have an index.html file.")
 		}
 	}
-	str += "<a href=\"" + relRoot + "/quiz/index.html\">Quiz</a>"
 	return str
 }
 
@@ -253,16 +255,22 @@ func dirContains(d []fs.DirEntry, name string) bool {
 	return false
 }
 
-func getTitle(file string) string {
+// getMetadata zwraca tytuł i klucz
+func getMetadata(file string) (string, int) {
 	bytes, err := os.ReadFile(file)
 	if err != nil {
-		return ""
+		return "", 1000
 	}
 	main := string(bytes)
 
 	conf := getConfigVars(main)
 
-	return conf["title"]
+	key, err := strconv.ParseInt(conf["key"], 10, 32)
+	if err != nil {
+		key = 1000
+	}
+
+	return conf["title"], int(key)
 }
 
 func directoryNavTree(dir string, e *navElement) error {
@@ -289,23 +297,36 @@ func directoryNavTree(dir string, e *navElement) error {
 			}
 			e.children = append(e.children, ce)
 		} else {
-			title := getTitle(dir + "/" + c.Name())
+			title, key := getMetadata(dir + "/" + c.Name())
 			if title == "" {
 				title = c.Name()
 			}
 			if c.Name() == "index.html" {
 				e.title = title
 				e.link = true
+				e.key = key
 			} else {
 				e.children = append(e.children, navElement{
 					name:     c.Name(),
 					link:     true,
 					title:    title,
+					key:      key,
 					children: nil,
 				})
 			}
 		}
 	}
+
+	if dir == "src" {
+		e.children = append(nav.children, navElement{name: "quiz/index.html", title: "Quiz", key: 9, link: true})
+	}
+
+	sort.SliceStable(e.children, func(i, j int) bool {
+		if e.children[i].key != 1000 && e.children[i].key == e.children[j].key {
+			fmt.Println("(Dwa dokumenty mają ten sam klucz: " + e.children[i].name + ", " + e.children[j].name + ")")
+		}
+		return e.children[i].key < e.children[j].key
+	})
 
 	return nil
 }
@@ -316,6 +337,8 @@ func main() {
 	if err != nil {
 		log.Panicln("Error when creating navigation tree:", err)
 	}
+
+	fmt.Println(nav)
 
 	err = filepath.WalkDir("src", handleFile)
 	if err != nil {
