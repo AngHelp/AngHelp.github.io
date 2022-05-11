@@ -64,12 +64,14 @@
 		<script>
 			let audio = document.getElementsByTagName("audio");
 			for (let element of audio) {
-				element.controls = false;
-				let b = document.createElement("button");
-				b.textContent = "🔊";
-				b.className = "audiobtn";
-				b.onclick = () => element.play();
-				element.replaceWith(element, b);
+				if (element.className !== "player") {
+					element.controls = false;
+					let b = document.createElement("button");
+					b.textContent = "🔊";
+					b.className = "audiobtn";
+					b.onclick = () => element.play();
+					element.replaceWith(element, b);
+				}
 			}
 		</script>
 	</body>
