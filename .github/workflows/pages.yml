@@ -1,0 +1,40 @@
+name: Generator strony
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+  
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Instalowanie najnowszej wersji Go
+        uses: actions/setup-go@v3.2.1
+      - name: Uruchomienie generatora
+        run: go run generator.go
+      - name: Zapisanie wygenerowanych plików
+        uses: actions/upload-pages-artifact@v1.0.3
+        with:
+          path: public
+          retention-days: 1
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:        
+      - name: Opublikowanie na GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1.0.8
