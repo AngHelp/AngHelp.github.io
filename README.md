@@ -29,6 +29,6 @@ Plik `format.html` jest używany przez generator stron jako schemat, który okre
 {nav-top} -> linki do poszczególnych sekcji strony
 {nav} -> menu nawigacyjne
 {main} -> zawartość strony
-{logo}. {logo-b} -> ścieżka do loga strony
+{logo}, {logo-b} -> ścieżka do loga strony
 {footer} -> stopka strony
 ```
