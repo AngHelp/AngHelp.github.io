@@ -1,177 +1,177 @@
 {
-	"kategorie":[
+	"kategorie": [
 		{
 			"nazwa": "Change Direct Speech\ninto Reported Speech",
 			"typ": "zwykly",
-			"pytania":[
+			"pytania": [
 				{
 					"tresc": "Monica: \"I'm watching TV:\"",
-					"odpowiedzi":[
-						"Monica said to me that she was watching TV.", 
-                        "Monica told to me that she were watching TV.", 
-                        "Monica told to me that she was watching TV ",
-                        "Monica said me that she was watching TV. ",
+					"odpowiedzi": [
+						"Monica said to me that she was watching TV.",
+						"Monica told to me that she were watching TV.",
+						"Monica told to me that she was watching TV ",
+						"Monica said me that she was watching TV. ",
 						0
 					]
 				},
-                {
+				{
 					"tresc": "We're working.",
-					"odpowiedzi":[
-						"He told me they were working.", 
-                        "He says they were working.", 
-                        "He told me they are working.",
-                        "He says they were working.",
+					"odpowiedzi": [
+						"He told me they were working.",
+						"He says they were working.",
+						"He told me they are working.",
+						"He says they were working.",
 						0
 					]
 				},
-                {
+				{
 					"tresc": "We aren't going to the library.",
-					"odpowiedzi":[
-						"He told me they aren't going to the library.", 
-                        "He told me they went to the library.", 
-                        "He told me they weren't going to the library.",
-                        "He told me they didn’t go to the library.",
+					"odpowiedzi": [
+						"He told me they aren't going to the library.",
+						"He told me they went to the library.",
+						"He told me they weren't going to the library.",
+						"He told me they didn’t go to the library.",
 						2
 					]
 				},
-                {
+				{
 					"tresc": "We are not visiting Poznań during our trip.",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"He told me they aren't visiting Poznań during their trip.",
-                        "He tells me they aren't visiting Poznań during their trip.",
-                        "He tells me they weren't visiting Poznań during their trip.",
-                        "He told me they weren't visiting Poznań during their trip.",
+						"He tells me they aren't visiting Poznań during their trip.",
+						"He tells me they weren't visiting Poznań during their trip.",
+						"He told me they weren't visiting Poznań during their trip.",
 						3
 					]
 				},
-                {
+				{
 					"tresc": "I said to him, \"Are you going to send a CV?\"",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"I asked him whether he is going to send a CV.",
-                        "I asked him whether he was going to send a CV.",
-                        "I asked if he is going to send a CV.",
-                        "I asked if he were going to send a CV.",
+						"I asked him whether he was going to send a CV.",
+						"I asked if he is going to send a CV.",
+						"I asked if he were going to send a CV.",
 						1
 					]
 				},
 				{
 					"tresc": "What are you going to do at the weekend?",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"She asked me what I was going to do at the weekend.",
-                        "She said what I was going to do at the weekend.",
-                        "She asked me what I am going to do at the weekend.",
-                        "She said what I was going to do at the weekend.",
+						"She said what I was going to do at the weekend.",
+						"She asked me what I am going to do at the weekend.",
+						"She said what I was going to do at the weekend.",
 						0
 					]
 				},
 				{
 					"tresc": "Tom said, \"We are working day and night to succeed\"",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"He said that they are working day and night to succeed.",
-                        "He says that they were working day and night to succeed.",
-                        "He says that they are working day and night to succeed.",
-                        "He said that they were working day and night to succeed.",
+						"He says that they were working day and night to succeed.",
+						"He says that they are working day and night to succeed.",
+						"He said that they were working day and night to succeed.",
 						3
 					]
 				},
 				{
 					"tresc": "Which is a reporting verb? ",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"be",
-                        "go",
-                        "tell",
-                        "to",
+						"go",
+						"tell",
+						"to",
 						2
 					]
 				},
 				{
 					"tresc": "He said that it was cold outside. Which word is optional?",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"said ",
-                        "that",
-                        "was",
-                        "He",
+						"that",
+						"was",
+						"He",
 						1
 					]
 				},
 				{
 					"tresc": "\"I bought a car last week.\" Last week he said he had bought a",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"car",
-                        "a week ago",
-                        "next week",
-                        "the week before",
+						"a week ago",
+						"next week",
+						"the week before",
 						3
 					]
 				},
 				{
 					"tresc": "\"Where is it?\" said Mary. She ",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"said where it is",
-                        "asked where it was",
-                        "asked if it was there",
-                        "said if it was there",
+						"asked where it was",
+						"asked if it was there",
+						"said if it was there",
 						1
 					]
 				},
 				{
 					"tresc": "Which of these is usually required with reported YES/NO questions?",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"if",
-                        "do",
-                        "why",
-                        "no",
+						"do",
+						"why",
+						"no",
 						0
 					]
 				},
 				{
 					"tresc": "Ram asked me where I worked. His original words were",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"\"Do you work there?\"",
-                        "\"Do I work there?\"",
-                        "\"Where do I work?\"",
-                        "\"Where do you work?\"",
+						"\"Do I work there?\"",
+						"\"Where do I work?\"",
+						"\"Where do you work?\"",
 						3
 					]
 				},
 				{
 					"tresc": "\"Don't yell!\" is a",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"direct request ",
-                        "direct order",
-                        "reported order",
-                        "Reported request",
+						"direct order",
+						"reported order",
+						"Reported request",
 						1
 					]
 				},
 				{
 					"tresc": "\"Please wipe your feet.\" I asked them to wipe",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"your feet nicely",
-                        "their feet nicely",
-                        "their feet",
-                        "Your feet",
+						"their feet nicely",
+						"their feet",
+						"Your feet",
 						2
 					]
 				},
 				{
 					"tresc": "She always asks me not to burn the cookies. She always says",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"\"Not to burn the cookies!\"",
-                        "\"Please don't burn the cookies.\"",
-                        "\"Do not burn the cookies.\"",
-                        "\"Please not to burn cookies\"",
+						"\"Please don't burn the cookies.\"",
+						"\"Do not burn the cookies.\"",
+						"\"Please not to burn cookies\"",
 						1
 					]
 				},
-                {
+				{
 					"tresc": "Which structure is not used for reported orders?",
 					"odpowiedzi": [
-							"order somebody to",
-							"tell somebody to",
-							"ask somebody to",
-							"force somebody to",
-							2
+						"order somebody to",
+						"tell somebody to",
+						"ask somebody to",
+						"force somebody to",
+						2
 					]
 				}
 			]
@@ -181,20 +181,20 @@
 		{
 			"nazwa": "Tenses",
 			"typ": "zwykly",
-			"pytania":[
+			"pytania": [
 				{
 					"tresc": "I was very surprised when she said she ... her exam. ",
-					"odpowiedzi":[
-						"failed", 
-                        "was failed", 
-                        "have failed",
-                        "had failed",
+					"odpowiedzi": [
+						"failed",
+						"was failed",
+						"have failed",
+						"had failed",
 						3
 					]
 				},
 				{
 					"tresc": "While I was going home, my son ... to France.",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"flew",
 						"flown",
 						"was flying",
@@ -204,7 +204,7 @@
 				},
 				{
 					"tresc": "When I was a child I ... tennis twice a week.",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"played",
 						"used to play",
 						"used to play",
@@ -214,7 +214,7 @@
 				},
 				{
 					"tresc": "As a young child Kate ... most of her time playing the piano. ",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"spend",
 						"would spend",
 						"had spent",
@@ -224,7 +224,7 @@
 				},
 				{
 					"tresc": "How long ... here?",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"do you wait",
 						"are you waiting",
 						"have you been waiting",
@@ -234,7 +234,7 @@
 				},
 				{
 					"tresc": "Never ... such a beautiful and smart girl. do I see",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"have I seen",
 						"do I see ",
 						"did I see",
@@ -244,7 +244,7 @@
 				},
 				{
 					"tresc": "What ... so wonderful?",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"smells",
 						"is smelling",
 						"does it smell",
@@ -254,7 +254,7 @@
 				},
 				{
 					"tresc": "It's been ages since I last ... you. ",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"saw",
 						"have seen",
 						"had seen",
@@ -264,7 +264,7 @@
 				},
 				{
 					"tresc": "We all knew that something wasn't right, but she didn't want to say what ... ",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"happen",
 						"was happening",
 						"had happened",
@@ -274,7 +274,7 @@
 				},
 				{
 					"tresc": "As soon as I ... my money back, I'll buy a new car. ",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"get",
 						"will get",
 						"got",
@@ -284,7 +284,7 @@
 				},
 				{
 					"tresc": "My train ... in half an hour. Could you give me a lift?",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"will leave",
 						"is going to leave",
 						"is leaving",
@@ -294,7 +294,7 @@
 				},
 				{
 					"tresc": "She's nice but I assume we ... as a couple.",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"won't work out ",
 						"wouldn't work out",
 						"are not going to work out",
@@ -304,7 +304,7 @@
 				},
 				{
 					"tresc": "Stop shouting at me! You ... my ideas!",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"always criticise",
 						"are always criticising",
 						"have always criticised",
@@ -314,7 +314,7 @@
 				},
 				{
 					"tresc": "When I got back home, everybody ... ",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"slept",
 						"was sleeping",
 						"had slept",
@@ -324,7 +324,7 @@
 				},
 				{
 					"tresc": "Next year we ... married for a 20 years. ",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"will be",
 						"will have been being ",
 						"are",
@@ -334,7 +334,7 @@
 				},
 				{
 					"tresc": ". It was obvious that she would pass her exam. She ... for weeks.",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"was preparing",
 						"had been preparing",
 						"prepared",
@@ -344,7 +344,7 @@
 				},
 				{
 					"tresc": "Look at his white face. He ...",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"will faint",
 						"is fainting",
 						"is going to faint",
@@ -354,7 +354,7 @@
 				},
 				{
 					"tresc": "This time tomorrow I ... to Greece.",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"will fly",
 						"am flying",
 						"will be flying",
@@ -364,7 +364,7 @@
 				},
 				{
 					"tresc": "The Internet ... more and more popular. ",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"is getting",
 						"gets",
 						"has been getting",
@@ -374,7 +374,7 @@
 				},
 				{
 					"tresc": "Look at her. She ...",
-					"odpowiedzi":[
+					"odpowiedzi": [
 						"is to cry",
 						"is supposed to cry",
 						"is due to cry",
@@ -385,34 +385,34 @@
 			]
 		},
 		{
-			
+
 			"nazwa": "słowa",
 			"typ": "slowa",
 			"pytania": {
-				"Threaten" : "grozić" ,
-			 	"Insist on" : "nalegać" ,
-				"Exclaim/remark" : "wykrzyknąć" ,
-				"Complain to somebody of" : "skarżyć się" ,
-				"Admit(to)" : "przyznać się" ,
-				"Sustatin damage" : "odnieść obrażenia" ,
-				"Give chest compressions" : "wykonywać masaż serca" ,
-				"Alleviate stress" : "łagodzić stres" , 
-				 "Concern" : "troska, zaniepokojenie",  
-				"Exvess" : "nadmiar, przesada" , 
-				"Counsellor" : "terapeuta" ,  
-				"Examination" : "badanie" , 
-				"Rehab centre" : "centrum odwykowe" ,  
-				"Take an overdose" : "przedawkować" ,
-				"Tweezers" : "pęseta" ,
-				"Use a defib" : "używać defibrylatora" ,  
-				"Administer first aid" : "udzielać pierwszej pomocy" , 
-				"Release cortisol" : "uwalniać kortyzol" , 
-				"Take preventative measures" : "podjąć środki zapobiegawcze" ,  
-				"Overcome stress" : "zwalczyć stres", 
-				"Stressed" : "zestresowany" ,
-				"Stressless" : "bezstresowy" , 
-				"Unbearable" : "nie do zniesienia" ,  
-				"Carry out a test" : "przeprowadzić badanie"   
+				"Threaten": "grozić",
+				"Insist on": "nalegać",
+				"Exclaim/remark": "wykrzyknąć",
+				"Complain to somebody of": "skarżyć się",
+				"Admit(to)": "przyznać się",
+				"Sustatin damage": "odnieść obrażenia",
+				"Give chest compressions": "wykonywać masaż serca",
+				"Alleviate stress": "łagodzić stres",
+				"Concern": "troska, zaniepokojenie",
+				"Exvess": "nadmiar, przesada",
+				"Counsellor": "terapeuta",
+				"Examination": "badanie",
+				"Rehab centre": "centrum odwykowe",
+				"Take an overdose": "przedawkować",
+				"Tweezers": "pęseta",
+				"Use a defib": "używać defibrylatora",
+				"Administer first aid": "udzielać pierwszej pomocy",
+				"Release cortisol": "uwalniać kortyzol",
+				"Take preventative measures": "podjąć środki zapobiegawcze",
+				"Overcome stress": "zwalczyć stres",
+				"Stressed": "zestresowany",
+				"Stressless": "bezstresowy",
+				"Unbearable": "nie do zniesienia",
+				"Carry out a test": "przeprowadzić badanie"
 			}
 		}
 	]
