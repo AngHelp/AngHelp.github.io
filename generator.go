@@ -246,7 +246,7 @@ func handleFile(path string, d fs.DirEntry, err error) error {
 	}
 
 	if path == "src" {
-		err = os.Mkdir("public", 0744)
+		err = os.Mkdir("public", 0755)
 		if errors.Is(err, fs.ErrExist) {
 			return nil
 		}
@@ -254,7 +254,7 @@ func handleFile(path string, d fs.DirEntry, err error) error {
 	}
 
 	if d.IsDir() {
-		err = os.Mkdir(strings.Replace(path, "src/", "public/", 1), 0744)
+		err = os.Mkdir(strings.Replace(path, "src/", "public/", 1), 0755)
 		if errors.Is(err, fs.ErrExist) {
 			return nil
 		} else if err != nil {
