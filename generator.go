@@ -76,9 +76,11 @@ func sliceToPath(path []string) string {
 }
 
 // Ta funkcja porównuje dwie ścieżki i zwraca:
-//    2 jeżeli są sobie równe
-//    1 jeżeli p2 jest rodzicem p1
-//    0 w innym przypadku
+//
+//	2 jeżeli są sobie równe
+//	1 jeżeli p2 jest rodzicem p1
+//	0 w innym przypadku
+//
 // Traktuje ścieżkę do katalogu i ścieżkę do pliku
 // index.html w tym samym katalogu jako równe sobie ścieżki.
 func compareSlicePaths(p1 []string, p2 []string) int {
@@ -142,8 +144,6 @@ func navTop(relRoot string) string {
 	for _, s := range nav.children {
 		if s.link {
 			str += "<a href=\"" + relRoot + "/" + s.name + "\">" + s.title + "</a>"
-		} else {
-			fmt.Println("Warning: Section", s.title, "should have an index.html file.")
 		}
 	}
 	return str
@@ -218,6 +218,27 @@ func generateFile(src string, dest string) error {
 	return nil
 }
 
+func copyFile(src string, dest string) error {
+	out, err := os.Create(dest)
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	fileBytes, err := os.ReadFile(src)
+	if err != nil {
+		return err
+	}
+
+	_, err = out.Write(fileBytes)
+	if err != nil {
+		return err
+	}
+
+	fmt.Println(">", strings.TrimPrefix(src, "src/"))
+	return nil
+}
+
 // Ta funkcja jest uruchamiana dla każdego folderu i pliku w folderze src/
 func handleFile(path string, d fs.DirEntry, err error) error {
 	if err != nil {
@@ -225,7 +246,7 @@ func handleFile(path string, d fs.DirEntry, err error) error {
 	}
 
 	if path == "src" {
-		err = os.Mkdir("public", d.Type().Perm())
+		err = os.Mkdir("public", 0744)
 		if errors.Is(err, fs.ErrExist) {
 			return nil
 		}
@@ -233,16 +254,19 @@ func handleFile(path string, d fs.DirEntry, err error) error {
 	}
 
 	if d.IsDir() {
-		info, _ := d.Info()
-		err = os.Mkdir(strings.Replace(path, "src/", "public/", 1), info.Mode())
+		err = os.Mkdir(strings.Replace(path, "src/", "public/", 1), 0744)
 		if errors.Is(err, fs.ErrExist) {
 			return nil
 		} else if err != nil {
 			return err
 		}
 		return nil
-	} else {
+	} else if strings.HasSuffix(strings.ToLower(d.Name()), ".html") {
 		return generateFile(path, strings.Replace(path, "src/", "public/", 1))
+	} else if strings.HasSuffix(strings.ToLower(d.Name()), ".htm") {
+		return copyFile(path, strings.Replace(path, "src/", "public/", 1)+"l")
+	} else {
+		return copyFile(path, strings.Replace(path, "src/", "public/", 1))
 	}
 }
 
@@ -296,7 +320,7 @@ func directoryNavTree(dir string, e *navElement) error {
 				return err
 			}
 			e.children = append(e.children, ce)
-		} else {
+		} else if strings.HasSuffix(strings.ToLower(c.Name()), ".html") {
 			title, key := getMetadata(dir + "/" + c.Name())
 			if title == "" {
 				title = c.Name()
@@ -337,8 +361,6 @@ func main() {
 	if err != nil {
 		log.Panicln("Error when creating navigation tree:", err)
 	}
-
-	fmt.Println(nav)
 
 	err = filepath.WalkDir("src", handleFile)
 	if err != nil {

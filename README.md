@@ -6,11 +6,11 @@ Dowiedz się więcej na temat zagadnień technicznych związanych z tą stron�
 
 ## Automatyczny generator plików
 
-Wszystkie pliki źródłowe, które mają znaleźć się na stronie, umieszcza się w folderze `public/` lub `src/`.
+Wszystkie pliki źródłowe, które mają znaleźć się na stronie, umieszcza się w folderze `src/`.
 
-Pliki z folderu `public/` będą umieszczane na stronie bez zmian.
+Pliki z folderu `src/` z rozszerzeniem innym niż `.html` będą umieszczane na stronie bez zmian. Pliki z rozszerzeniem `.htm` również nie będą modyfikowane (ani uwzględniane w menu nawigacyjnym), ale rozszerzenie będzie zmienione na `.html`.
 
-Pliki w folderze `src/` zawierają samą zawartość danej strony. Inne elementy pliku HTML, takie jak `<head>` i menu nawigacyjne, są dodawane do pliku automatycznie.
+Pliki w folderze `src/` z rozszerzeniem `.html` zawierają samą zawartość danej strony. Inne elementy pliku HTML, takie jak `<head>` i menu nawigacyjne, są dodawane do pliku automatycznie.
 
 Do pliku z folderu `src/` należy dodać komentarz z tytułem strony, w taki sposób: `<!-- @title: tytuł strony -->`. Ten tytuł strony będzie użyty do znacznika `<title>` oraz w menu nawigacyjnym.
 
