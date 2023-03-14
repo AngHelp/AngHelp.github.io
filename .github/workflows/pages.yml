@@ -20,11 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Instalowanie najnowszej wersji Go
-        uses: actions/setup-go@v3.2.1
+        uses: actions/setup-go@v3.5.0
       - name: Uruchomienie generatora
         run: go run generator.go
       - name: Zapisanie wygenerowanych plików
-        uses: actions/upload-pages-artifact@v1.0.3
+        uses: actions/upload-pages-artifact@v1.0.7
         with:
           path: public
           retention-days: 1
@@ -37,4 +37,4 @@ jobs:
     steps:        
       - name: Opublikowanie na GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1.0.8
+        uses: actions/deploy-pages@v1.2.5
