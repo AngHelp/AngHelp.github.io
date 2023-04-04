@@ -319,7 +319,9 @@ func directoryNavTree(dir string, e *navElement) error {
 			if err != nil {
 				return err
 			}
-			e.children = append(e.children, ce)
+			if ce.link {
+				e.children = append(e.children, ce)
+			}
 		} else if strings.HasSuffix(strings.ToLower(c.Name()), ".html") {
 			title, key := getMetadata(dir + "/" + c.Name())
 			if title == "" {
