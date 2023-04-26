@@ -2,7 +2,7 @@
 
 Strona internetowa o języku angielskim.
 
-Dowiedz się więcej na temat zagadnień technicznych związanych z tą stroną, czytając naszą [prezentację](public/about/anghelp.pdf) z X Forum Młodzieży Uzdolnionej Informatycznie, zorganizowanego przez Łódzkie Centrum Doskonalenia Nauczycieli i Kształcenia Praktycznego.
+Dowiedz się więcej na temat zagadnień technicznych związanych z tą stroną, czytając naszą [prezentację](src/about/anghelp.pdf) z X Forum Młodzieży Uzdolnionej Informatycznie, zorganizowanego przez Łódzkie Centrum Doskonalenia Nauczycieli i Kształcenia Praktycznego.
 
 ## Automatyczny generator plików
 
